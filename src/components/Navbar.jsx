@@ -15,7 +15,7 @@ const navLinks = ["About Us", "Login", "Success Stories", "Blogs"];
 
 function DropdownMenu({ isOpen }) {
     return isOpen ? (
-        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-80 bg-white rounded-lg shadow-lg p-3 grid grid-cols-1 gap-1 animate__animated animate__fadeIn">
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-80 bg-[#FAFAFA] rounded-lg shadow-lg p-3 grid grid-cols-1 gap-1 animate__animated animate__fadeIn">
             {dropdownItems.map((item, index) => (
                 <div key={index} className="flex items-center space-x-2 px-2 py-1 hover:bg-gray-100 rounded-lg cursor-pointer transition-all">
                     <span className="text-lg">{item.icon}</span>

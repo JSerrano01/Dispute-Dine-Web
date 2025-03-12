@@ -52,9 +52,9 @@ export default function Hero() {
                 <p className="mt-4 text-lg max-w-2xl text-gray-300">
                     Automate your disputes, reviews, finances, promotions, and downtime across DoorDash, UberEats, Grubhub, and more.
                 </p>
-                <button className="mt-6 bg-[#78C6A3] px-6 py-3 rounded text-white font-semibold">
+                <a className="mt-6 bg-[#78C6A3] px-6 py-3 rounded text-white font-semibold">
                     Book a Demo →
-                </button>
+                </a>
             </div>
 
             {/* Modelo 3D */}
