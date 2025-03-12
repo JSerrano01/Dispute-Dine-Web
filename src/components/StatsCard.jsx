@@ -1,10 +1,16 @@
-export default function StatsCard ({ title, amount, description, buttonLabel }) {
+const TransparentCard = ({ title, children }) => {
     return (
-        <div className="bg-white p-4 rounded-lg shadow-md w-64 text-center">
-            <h3 className="text-gray-600 text-sm font-semibold">{title}</h3>
-            <p className="text-2xl font-bold">{amount}</p>
-            <p className="text-gray-500 text-sm">{description}</p>
-            {buttonLabel && <button className="mt-2 bg-orange-500 px-3 py-1 text-white rounded">{buttonLabel}</button>}
+      <div className="relative w-80 max-w-md p-4 rounded-2xl bg-white bg-opacity-50 backdrop-blur-md shadow-2xl">
+        {/* Título con mejor contraste */}
+        <div className="text-white font-semibold text-base mb-0">{title}</div>
+        
+        {/* Contenedor con fondo blanco y flexibilidad */}
+        <div className="bg-white p-4 rounded-xl shadow-md">
+          {children}
         </div>
+      </div>
     );
-};
+  };
+  
+  export default TransparentCard;
+  

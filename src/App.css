@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "animate.css";
+
 
 body {
   font-family: 'Inter', sans-serif;
@@ -12,6 +14,12 @@ h1 {
 
 .btn-button-book {
   background-color: #78C6A3;
+}
+
+.text-stroke {
+  color: white;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
 }
 /* #root {
   max-width: 1280px;
