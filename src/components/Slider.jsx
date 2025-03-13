@@ -1,22 +1,26 @@
 import React from "react";
 
-const logos = [
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
-    "https://picsum.photos/800/800",
+// Lista de dominios de marcas conocidas
+const companies = [
+    "google.com",
+    "facebook.com",
+    "microsoft.com",
+    "netflix.com",
+    "twitter.com",
+    "apple.com",
+    "amazon.com",
+    "adobe.com",
+    "tesla.com",
+    "spotify.com",
+    "paypal.com",
+    "snapchat.com",
+    "linkedin.com",
+    "github.com",
+    "airbnb.com",
 ];
+
+// Genera URLs de logos usando Clearbit
+const logos = companies.map((company) => `https://logo.clearbit.com/${company}`);
 
 const LogoSlider = () => {
     return (
