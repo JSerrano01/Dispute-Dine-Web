@@ -71,8 +71,9 @@ const Footer = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="border-t border-gray-800 mt-30 pt-6 flex flex-col items-center">
-                <div className="flex gap-6 mb-4">
+            <div className="border-t border-gray-800 mt-30 pt-6 flex justify-between items-center w-full">
+                {/* Sección de Iconos a la Izquierda */}
+                <div className="flex gap-6">
                     <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
                         <FaYoutube className="h-6 w-6 text-white hover:text-red-500 transition-colors duration-300" />
                     </a>
@@ -86,8 +87,11 @@ const Footer = () => {
                         <FaXTwitter className="h-6 w-6 text-white hover:text-blue-400 transition-colors duration-300" />
                     </a>
                 </div>
+
+                {/* Texto a la Derecha */}
                 <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
             </div>
+
 
         </footer>
     );

@@ -8,3 +8,68 @@
 a {
     text-decoration: none;
 }
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: "" !important;
+}
+
+
+.custom-pagination .swiper-pagination-bullet-active {
+    background-color: #56AB92 !important;
+    /* Asegura que el activo también sea negro */
+}
+
+/* Contenedor de paginación */
+.custom-pagination-press {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* Espaciado entre bullets */
+}
+
+/* Estilo de bullets */
+.custom-pagination-press .swiper-pagination-bullet {
+    background-color: #ccc !important;
+    /* Color gris por defecto */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo del bullet activo */
+.custom-pagination-press .swiper-pagination-bullet-active {
+    background-color: #56AB92 !important;
+    /* Color activo personalizado */
+    transform: scale(1);
+}
+
+/* Contenedor de paginación */
+.custom-pagination-testimonial {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* Espaciado entre bullets */
+}
+
+/* Estilo de bullets */
+.custom-pagination-testimonial .swiper-pagination-bullet {
+    background-color: #ccc !important;
+    /* Color gris por defecto */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo del bullet activo */
+.custom-pagination-testimonial .swiper-pagination-bullet-active {
+    background-color: #56AB92 !important;
+    /* Color activo personalizado */
+    transform: scale(1);
+}
