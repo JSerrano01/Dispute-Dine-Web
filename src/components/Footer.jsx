@@ -1,5 +1,4 @@
 import { Mail, Phone } from "lucide-react";
-import Logo from "../assets/img/LogoNavbarLight.png";
 import { FaYoutube, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
@@ -8,7 +7,7 @@ const Footer = () => {
             <div className="max-w-9xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-0">
                 {/* Columna 1 - Logo y Contacto */}
                 <div>
-                    <img src={Logo} alt="Dispute Dine Logo" className="h-30 mb-4" />
+                <img src="/img/logoNavbarLight.png" alt="Dispute Dine Logo" className="h-35 mb-4" />
                     <p className="text-sm">We're Here to Help You Maximize Your Potential</p>
                     <div className="mt-4 flex flex-col gap-2 text-sm">
                         <span className="flex items-center gap-2">
