@@ -1,15 +1,11 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Dashboard from "./components/Dashboard";
-import Slider from "./components/Slider";
-import DashboardContainer from "./components/DashboardContainer";
-import DashboardContainerLow from "./components/DashboardContainerLow";
 import Footer from "./components/Footer";
-import Banner from "./components/BannerSection";
-import CaseStudies from "./components/CaseStudies";
-import ROICalculator from "./components/ROICalculator";
-import PressSlider from "./components/PressSlider";
-import LiveDemoForm from "./components/LiveDemoForm";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import DashboardPage from "./pages/DashboardPage";
 
 const Layout = ({ children }) => {
   return (
@@ -21,63 +17,21 @@ const Layout = ({ children }) => {
 
 const App = () => {
   return (
-    <div className="relative w-full min-h-screen flex flex-col overflow-x-hidden bg-black">
-      <Navbar />
+    <Router>
+      <div className="relative w-full min-h-screen flex flex-col overflow-x-hidden bg-black">
+        <Navbar />
 
-      {/* Fondo general */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black -z-10"></div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Routes>
 
-      {/* Contenedor principal */}
-      <Layout>
-        <div className="relative flex flex-col items-center">
-          <Hero />
-        </div>
-      </Layout>
-
-      {/* Dashboard flotando sobre el Hero */}
-      <div className="relative flex justify-center -mt-10 sm:-mt-16 z-20 bg-[#FAFAFA]">
-        <Layout>
-          <Dashboard />
-        </Layout>
+        <Footer />
       </div>
-
-      {/* Secciones con fondo blanco */}
-      <div className="bg-[#FAFAFA]">
-        <Layout><Slider /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><DashboardContainer /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><DashboardContainerLow /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><Banner /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><CaseStudies /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><ROICalculator /></Layout>
-      </div>
-      <div className="bg-[#FAFAFA]">
-        <Layout><PressSlider /></Layout>
-      </div>
-
-      {/* Sección con fondo negro */}
-      <div className="bg-black py-20">
-        <Layout>
-          <div className="max-w-7xl mx-auto">
-            <LiveDemoForm />
-          </div>
-        </Layout>
-      </div>
-
-
-      <div>
-        <Layout><Footer /></Layout>
-      </div>
-    </div>
+    </Router>
   );
 };
 

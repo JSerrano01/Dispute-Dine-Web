@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import {
     ChartBarIcon,
@@ -7,7 +8,7 @@ import {
     StarIcon,
     ChartPieIcon,
     RocketLaunchIcon
-} from "@heroicons/react/24/solid"; // Importamos los íconos de Heroicons
+} from "@heroicons/react/24/solid";
 
 import "animate.css";
 
@@ -20,7 +21,12 @@ const dropdownItems = [
     { icon: <ChartPieIcon className="h-5 w-5 text-gray-700" />, title: "Analytics & Insights", desc: "Unlock the Power of Data" },
 ];
 
-const navLinks = ["About Us", "Login", "Success Stories", "Blogs"];
+const navLinks = [
+    { name: "About Us", path: "/about" },
+    { name: "Success Stories", path: "/success-stories" },
+    { name: "Blogs", path: "/blogs" },
+    { name: "Login", path: "/login" }
+];
 
 function DropdownMenu({ isOpen }) {
     return isOpen ? (
@@ -28,7 +34,7 @@ function DropdownMenu({ isOpen }) {
             {dropdownItems.map((item, index) => (
                 <div key={index} className="flex items-center px-2 py-1 gap-3 hover:bg-gray-100 rounded-lg cursor-pointer transition-all">
                     {item.icon}
-                    <div className="flex flex-col gap-0 leading-tight"> {/* Menos espacio entre líneas */}
+                    <div className="flex flex-col gap-0 leading-tight">
                         <p className="font-semibold text-gray-900 text-sm">{item.title}</p>
                         <p className="text-xs text-gray-500">{item.desc}</p>
                     </div>
@@ -49,14 +55,21 @@ function NavbarLinks({ isScrolled }) {
                 </button>
                 <DropdownMenu isOpen={isDropdownOpen} />
             </div>
-            {navLinks.map((text, index) => (
-                <a key={index} href="#" className={`transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"}`}>
-                    {text}
-                </a>
+            {navLinks.map((link, index) => (
+                <Link
+                    key={index}
+                    to={link.path}
+                    className={`transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"}`}
+                >
+                    {link.name}
+                </Link>
             ))}
-            <a href="#" className="bg-[#78C6A3] text-white px-3 py-2 rounded-md font-medium text-xs hover:bg-[#56AB92] transition-colors duration-300">
+            <Link
+                to="/book-demo"
+                className="bg-[#78C6A3] text-white px-3 py-2 rounded-md font-medium text-xs hover:bg-[#56AB92] transition-colors duration-300"
+            >
                 Book Demo
-            </a>
+            </Link>
         </div>
     );
 }
@@ -74,11 +87,13 @@ export default function Navbar() {
     return (
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled || isMobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"}`}>
             <div className="container mx-auto flex justify-between items-center h-20 px-6 md:px-10 xl:px-40">
-                <img
-                    src={(isScrolled || isMobileMenuOpen) ? "/img/logoNavbarDark.png" : "/img/logoNavbarLight.png"}
-                    alt="Logo"
-                    className="h-30 w-auto transition-all duration-300"
-                />
+                <Link to="/">
+                    <img
+                        src={(isScrolled || isMobileMenuOpen) ? "/img/logoNavbarDark.png" : "/img/logoNavbarLight.png"}
+                        alt="Logo"
+                        className="h-30 w-auto transition-all duration-300"
+                    />
+                </Link>
                 {/* Desktop Links */}
                 <NavbarLinks isScrolled={isScrolled} />
                 {/* Mobile Menu Button */}
@@ -92,14 +107,32 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-5 transition-all duration-300">
-                    {navLinks.map((text, index) => (
-                        <a key={index} href="#" className="text-black text-lg font-medium hover:text-gray-700 transition-colors duration-300">
-                            {text}
-                        </a>
+                    <div className="relative">
+                        <button
+                            className="text-black text-lg font-medium hover:text-gray-700 transition-colors duration-300"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Product Features ▾
+                        </button>
+                        <DropdownMenu isOpen={true} />
+                    </div>
+                    {navLinks.map((link, index) => (
+                        <Link
+                            key={index}
+                            to={link.path}
+                            className="text-black text-lg font-medium hover:text-gray-700 transition-colors duration-300"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
                     ))}
-                    <a href="#" className="bg-[#78C6A3] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#56AB92] transition-colors duration-300">
+                    <Link
+                        to="/book-demo"
+                        className="bg-[#78C6A3] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#56AB92] transition-colors duration-300"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
                         Book Demo
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>
