@@ -1,74 +1,93 @@
+import React, { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import { Suspense } from "react";
-import { useGLTF } from "@react-three/drei";
+import { OrbitControls, Box } from "@react-three/drei";
+import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
-// Cargar modelo GLB desde public/models
-function Model() {
-    const gltf = useGLTF("/public/models/1.glb"); // Asegúrate de reemplazar con el nombre correcto
-    return <primitive object={gltf.scene} scale={1.5} position={[0, 1, 0]} />;
+// Control de la cámara con movimiento automático
+function CameraController() {
+  const controlsRef = useRef();
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  const onStart = () => setIsInteracting(true);
+  const onEnd = () => setIsInteracting(false);
+
+  useFrame(() => {
+    if (!isInteracting && controlsRef.current) {
+      // Movimiento suave automático cuando no hay interacción
+      controlsRef.current.setAzimuthalAngle(controlsRef.current.getAzimuthalAngle() + 0.01);
+      controlsRef.current.update();
+    }
+  });
+
+  return (
+    <OrbitControls
+      ref={controlsRef}
+      enableZoom={false}
+      onStart={onStart}
+      onEnd={onEnd}
+    />
+  );
 }
 
-// Modelo 3D con movimiento suave
-function Cube() {
-    const cubeRef = useRef();
+const SplineHero = () => {
+  return (
+    <section className="relative w-full h-screen bg-black flex items-center justify-center flex-col text-white">
+      <div className="absolute top-49 text-center z-10">
+        <span className="bg-gray-800 text-sm px-4 py-1 rounded-full">
+          #1 AI Restaurant Operations Automation Platform
+        </span>
 
-    useFrame(({ mouse }) => {
-        if (cubeRef.current) {
-            cubeRef.current.rotation.y = mouse.x * Math.PI * 0.1; // Ajuste en Y
-            cubeRef.current.rotation.x = -mouse.y * Math.PI * 0.1; // Ajuste en X (invertido)
-        }
-    });
+        {/* Typewriter Effect */}
+        <h1 className="text-5xl font-bold mt-4 text-white stroke-text">
+          Automate third-party{' '} <br />
+          <span className="text-[#78C6A3]">
+            <Typewriter
+              words={["promotions", "disputes", "reviews", "finances", "downtime"]}
+              loop={0} // infinito
+              cursor
+              cursorStyle=","
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+            <br />
+          </span> in <span className="text-[#78C6A3]">minutes.</span>
+        </h1>
 
-    return (
-        <mesh ref={cubeRef} position={[0, 1, 0]}>
-            <boxGeometry args={[1.5, 1.5, 1.5]} />
-            <meshStandardMaterial color="cyan" metalness={0.8} roughness={0.2} />
-        </mesh>
-    );
-}
+        <p className="mt-4 text-lg max-w-2xl text-gray-300">
+          Automate your disputes, reviews, finances, promotions, and downtime across DoorDash, UberEats, Grubhub, and more.
+        </p>
 
-// Suelo reflejante
-function Floor() {
-    return (
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]}>
-            <planeGeometry args={[10, 10]} />
-            <meshStandardMaterial color="#111" metalness={1} roughness={0.3} />
-        </mesh>
-    );
-}
+        <motion.button
+          className="mt-6 bg-[#78C6A3] px-8 py-3 !rounded-4xl text-white font-semibold"
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: false, amount: 0.2 }} // Se ejecuta cada vez que entra un 20% en la vista
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 10,
+          }}
+        >
+          Book a Demo →
+        </motion.button>
+      </div>
 
-export default function Hero() {
-    return (
-        <section className="relative h-screen flex flex-col items-center justify-center text-white text-center p-8">
-            {/* Texto en primer plano */}
-            <div className="relative z-10 pointer-events-none"> {/* Evita que el texto interrumpa el mouse */}
-                <span className="bg-gray-800 text-sm px-4 py-1 rounded-full">
-                    #1 AI Restaurant Operations Automation Platform
-                </span>
-                <h1 className="text-5xl font-bold mt-4 text-white stroke-text">
-                    Automate third-party promotions in <span className="text-blue-300">minutes.</span>
-                </h1>
-                <p className="mt-4 text-lg max-w-2xl text-gray-300">
-                    Automate your disputes, reviews, finances, promotions, and downtime across DoorDash, UberEats, Grubhub, and more.
-                </p>
-                <a className="mt-6 bg-[#78C6A3] px-6 py-3 rounded text-white font-semibold">
-                    Book a Demo →
-                </a>
-            </div>
+      <Canvas className="w-full h-full absolute top-0 left-0" camera={{ position: [0, 0, 5] }}>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[2, 2, 5]} />
+        <Suspense fallback={null}>
+          <Box args={[2, 2, 2]} position={[0, 0, 0]}>
+            <meshStandardMaterial attach="material" color="cyan" />
+          </Box>
+        </Suspense>
+        <CameraController /> {/* Cámara con movimiento automático */}
+      </Canvas>
 
-            {/* Modelo 3D */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <Canvas camera={{ position: [0, 1, 5] }} eventSource={document.body} style={{ background: "black" }}>
-                    <ambientLight intensity={0.5} />
-                    <directionalLight position={[5, 5, 5]} />
-                    <Cube />
-                    {/* <Suspense>
-                        <Model />
-                    </Suspense> */}
-                    <Floor />
-                </Canvas>
-            </div>
-        </section>
-    );
-}
+      <p className="absolute bottom-45 text-gray-400 z-10">Press and drag to orbit</p>
+    </section>
+  );
+};
+
+export default SplineHero;

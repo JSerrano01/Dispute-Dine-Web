@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Hero1 from "./components/Hero1";
+import Hero from "./components/Hero";
 import Dashboard from "./components/Dashboard";
 import Slider from "./components/Slider";
 import DashboardContainer from "./components/DashboardContainer";
@@ -25,7 +25,7 @@ const App = () => {
       {/* Contenedor principal */}
       <Layout>
         <div className="relative flex flex-col items-center">
-          <Hero1 />
+          <Hero />
         </div>
       </Layout>
 
