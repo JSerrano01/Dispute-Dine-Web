@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -48,7 +48,6 @@ const pressArticles = [
     }
 ];
 
-
 const PressSlider = () => {
     return (
         <div className="bg-[#FAFAFA] py-10 px-6">
@@ -64,25 +63,17 @@ const PressSlider = () => {
                     <Swiper
                         modules={[Autoplay, Navigation, Pagination]}
                         spaceBetween={20}
-                        slidesPerView={1.2}
+                        slidesPerView={1}
                         loop={true}
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
                         breakpoints={{
-                            640: { slidesPerView: 1.5 },
-                            768: { slidesPerView: 2.2 },
-                            1024: { slidesPerView: 3 },
+                            640: { slidesPerView: 1 },
+                            768: { slidesPerView: 1.5 },
+                            1024: { slidesPerView: 2 },
+                            1280: { slidesPerView: 3 },
                         }}
-                        navigation={{
-                            prevEl: ".swiper-button-prev",
-                            nextEl: ".swiper-button-next",
-                        }}
-                        pagination={{
-                            el: ".custom-pagination-press",
-                            clickable: true,
-                            renderBullet: function (index, className) {
-                                return `<span class="${className} custom-bullet"></span>`; // Agrega "custom-bullet" para personalización
-                            },
-                        }}
+                        navigation
+                        pagination={{ clickable: true }}
                         className="pb-10"
                     >
                         {pressArticles.map((article) => (
@@ -102,22 +93,6 @@ const PressSlider = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
-                    <button className="swiper-button-prev absolute top-1/2 !left-[-60px] transform -translate-y-1/2 z-10 !text-[#99E2B4] flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-olors duration-500">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                    </button>
-                    <button className="swiper-button-next absolute top-1/2 !right-[-40px] transform -translate-y-1/2 z-10 !text-[#99E2B4] ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-olors duration-500">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-
-                    </button>
-
-                    {/* Custom pagination */}
-                    <div className="custom-pagination-press flex justify-center mt-4 space-x-2 !text-black !important">
-                    </div>
                 </div>
             </div>
         </div>

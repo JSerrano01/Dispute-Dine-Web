@@ -3,9 +3,9 @@ import TestimonialSlider from "./TestimonialSlider";
 
 const DemoForm = () => {
     return (
-        <div className="relative flex flex-col lg:flex-row items-center justify-between bg-black text-white max-w-8xl mx-auto !rounded-xs shadow-lg before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-black before:via-white before:to-black">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between bg-black text-white max-w-7xl mx-auto py-10 lg:py-20 rounded-lg shadow-lg overflow-hidden after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gradient-to-r after:from-black after:via-white after:to-black">
             {/* Video Section */}
-            <div className="relative max-w-fit max-h-fit lg:w-1/2 mt-17">
+            <div className="relative w-full lg:w-1/2 mt-6">
                 <img
                     src="https://picsum.photos/1280/720"
                     alt="Video Thumbnail"

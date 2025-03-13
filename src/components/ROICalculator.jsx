@@ -12,8 +12,8 @@ const ROICalculator = () => {
                         Quickly fix disputes and save big. Enter your details below to get started.
                     </p>
 
-                    {/* Contenedor con Grid para mantener alineados los inputs y el botón */}
-                    <div className="grid grid-cols-4 gap-4 justify-center items-end">
+                    {/* Responsive Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {/* Input 1 */}
                         <div className="flex flex-col">
                             <label className="text-sm font-semibold">Number of Stores</label>
@@ -47,10 +47,12 @@ const ROICalculator = () => {
                             />
                         </div>
 
-                        {/* Botón alineado con los inputs */}
-                        <button className="mt-5 bg-[#99E2B4] text-[#FAFAFA] font-semibold py-[10px] px-6 !rounded-lg  hover:bg-gray-100 hover:text-[#99E2B4] transition-colors duration-500">
-                            Calculate My ROI
-                        </button>
+                        {/* Botón */}
+                        <div className="flex items-end">
+                            <button className="w-full bg-[#99E2B4] text-[#FAFAFA] font-semibold py-[10px] px-6 rounded-lg hover:bg-gray-100 hover:text-[#99E2B4] transition-colors duration-500">
+                                Calculate My ROI
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

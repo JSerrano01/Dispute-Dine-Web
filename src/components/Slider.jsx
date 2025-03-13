@@ -37,7 +37,7 @@ const LogoSlider = () => {
                             <img
                                 src={logo}
                                 alt={`Logo ${index}`}
-                                className="w-24 h-24 rounded-full object-cover"
+                                className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover"
                             />
                         </div>
                     ))}

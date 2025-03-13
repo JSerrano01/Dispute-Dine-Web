@@ -84,7 +84,7 @@ const SplineHero = () => {
         </p>
 
         <motion.button
-          className="mt-4 sm:mt-6 bg-[#78C6A3] px-6 sm:px-8 py-2 sm:py-3 rounded-2xl text-white font-semibold w-full sm:w-auto"
+          className="mt-4 sm:mt-6 bg-[#78C6A3] px-6 sm:px-8 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto"
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: false, amount: 0.2 }}

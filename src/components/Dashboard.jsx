@@ -24,8 +24,8 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="relative mt-[-7%] z-1 flex flex-wrap justify-center gap-6 px-8 mb-16">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-start">
+        <div className="relative mt-[-7%] z-1 flex flex-wrap justify-center gap-6 px-8 mb-16 md:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
                 {/* Card con Imagen */}
                 <StatsCard
                     title={
@@ -140,18 +140,6 @@ const Dashboard = () => {
                 </StatsCard>
 
             </div>
-
-            {/* Card con Etiquetas de Texto */}
-            {/* <StatsCard title="MARKETPLACE MANAGEMENT">
-                <div className="flex flex-wrap gap-2 text-center text-sm font-medium">
-                    <span className="text-red-500">DoorDash</span>
-                    <span className="text-green-500">Uber Eats</span>
-                    <span className="text-yellow-500">GrubHub</span>
-                    <span className="text-blue-500">Google</span>
-                    <span className="text-green-400">ezCater</span>
-                    <span className="text-red-600">Yelp</span>
-                </div>
-            </StatsCard> */}
         </div>
     );
 };

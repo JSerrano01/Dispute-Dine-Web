@@ -36,7 +36,7 @@ const PromotionsGraph = () => {
 
 const DashboardContainer = () => {
     return (
-        <div className="flex gap-6 p-6 bg-[#FAFAFA] min-h-item">
+        <div className="flex flex-col sm:flex-row gap-6 p-6 bg-[#FAFAFA] min-h-item">
             {/* Dispute Manager (70% de ancho) */}
             <div className="w-[70%] bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center gap-2 text-gray-500 font-semibold">
@@ -55,7 +55,7 @@ const DashboardContainer = () => {
                     {["DOORDASH", "UBER EATS", "GRUBHUB", "DOORDASH DRIVE"].map((item, index) => (
                         <motion.span
                             key={item}
-                            className="bg-[#56AB92] text-[#FAFAFA] px-3 py-2 text-sm font-semibold rounded-md"
+                            className="bg-[#56AB92] text-[#FAFAFA] px-3 py-2 text-sm font-semibold rounded-md max-md:px-0 max-md:text-xs"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}
@@ -140,7 +140,7 @@ const DashboardContainer = () => {
                     {["DOORDASH", "UBER EATS", "GRUBHUB"].map((item, index) => (
                         <motion.span
                             key={item}
-                            className="bg-[#99E2B4] !border-[#99E2B4] px-3 py-2 text-sm rounded-md text-[#FAFAFA]"
+                            className="bg-[#99E2B4] !border-[#99E2B4] px-3 py-2 text-sm rounded-md text-[#FAFAFA] max-md:px-1 max-md:text-xs"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}

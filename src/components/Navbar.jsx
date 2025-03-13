@@ -82,7 +82,10 @@ export default function Navbar() {
                 {/* Desktop Links */}
                 <NavbarLinks isScrolled={isScrolled} />
                 {/* Mobile Menu Button */}
-                <button className={`lg:hidden text-4xl transition-colors duration-300 ${isMobileMenuOpen ? "text-black" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                <button
+                    className={`lg:hidden text-4xl transition-colors duration-500 ${isMobileMenuOpen || isScrolled ? "text-black" : "text-white"}`}
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
                     {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
                 </button>
             </div>

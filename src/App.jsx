@@ -13,7 +13,7 @@ import LiveDemoForm from "./components/LiveDemoForm";
 
 const Layout = ({ children }) => {
   return (
-    <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       {children}
     </div>
   );
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
 
 const App = () => {
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full min-h-screen flex flex-col overflow-x-hidden bg-black">
       <Navbar />
 
       {/* Fondo general */}
@@ -41,7 +41,7 @@ const App = () => {
         </Layout>
       </div>
 
-      {/* Secciones con Slider, Contenedores y Formularios */}
+      {/* Secciones con fondo blanco */}
       <div className="bg-[#FAFAFA]">
         <Layout><Slider /></Layout>
       </div>
@@ -63,9 +63,17 @@ const App = () => {
       <div className="bg-[#FAFAFA]">
         <Layout><PressSlider /></Layout>
       </div>
-      <div className="bg-black">
-        <Layout><LiveDemoForm /></Layout>
+
+      {/* Sección con fondo negro */}
+      <div className="bg-black py-20">
+        <Layout>
+          <div className="max-w-7xl mx-auto">
+            <LiveDemoForm />
+          </div>
+        </Layout>
       </div>
+
+
       <div>
         <Layout><Footer /></Layout>
       </div>
