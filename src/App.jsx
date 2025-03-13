@@ -3,6 +3,8 @@ import Hero1 from "./components/Hero1";
 import Dashboard from "./components/Dashboard";
 import Slider from "./components/Slider";
 import DashboardContainer from "./components/DashboardContainer";
+import DashboardContainerLow from "./components/DashboardContainerLow";
+import Footer from "./components/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -44,6 +46,16 @@ const App = () => {
       <div className="bg-[#FAFAFA]">
         <Layout>
           <DashboardContainer />
+        </Layout>
+      </div>
+      <div className="bg-[#FAFAFA]">
+        <Layout>
+          <DashboardContainerLow />
+        </Layout>
+      </div>
+      <div className="">
+        <Layout>
+          <Footer />
         </Layout>
       </div>
     </div>

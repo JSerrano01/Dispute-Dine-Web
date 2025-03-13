@@ -59,7 +59,7 @@ const Dashboard = () => {
                                 <CountUp end={5600} duration={4} separator="," />
                             </p>
                             <div className="flex items-center gap-1 text-green-600 font-medium text-xs ml-auto">
-                                <a href="#" className="bg-[#78C6A3] border-1 border-[#78C6A3] !text-[#FAFAFA] px-3 py-2 rounded-3xl font-normal text-sm transition-colors duration-300 hover:bg-[#56AB92] hover:!text-white" style={{ color: '#78C6A3' }}>Dispute</a>
+                                <span className="bg-[#78C6A3] border-1 border-[#78C6A3] !text-[#FAFAFA] px-3 py-2 rounded-3xl font-normal text-sm transition-colors duration-300 hover:bg-[#56AB92] hover:!text-white" style={{ color: '#78C6A3' }}>Dispute</span>
                             </div>
                         </div>
                         <p className="text-gray-500 text-sm mt-0">Disputed amount: $<CountUp end={51280} duration={4} separator="," /></p>
@@ -84,12 +84,11 @@ const Dashboard = () => {
                                 <p className="text-4xl font-normal text-gray-600">
                                     <CountUp end={6433} duration={4} separator="," />
                                 </p>
-                                <a
-                                    href="#"
+                                <span
                                     className="bg-[#78C6A3] border border-[#78C6A3] !text-[#FAFAFA] px-2 py-2 rounded-3xl font-normal text-sm transition-colors duration-300 hover:bg-[#56AB92] hover:text-white"
                                 >
                                     Auto Reply
-                                </a>
+                                </span>
                             </div>
                         </div>
                     </StatsCard>

@@ -4,6 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import { Box } from "@react-three/drei";
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 const SplineHero = () => {
   return (
@@ -12,7 +13,7 @@ const SplineHero = () => {
         <span className="bg-gray-800 text-sm px-4 py-1 rounded-full">
           #1 AI Restaurant Operations Automation Platform
         </span>
-        
+
         {/* Typewriter Effect */}
         <h1 className="text-5xl font-bold mt-4 text-white stroke-text">
           Automate third-party{' '} <br />
@@ -33,10 +34,20 @@ const SplineHero = () => {
         <p className="mt-4 text-lg max-w-2xl text-gray-300">
           Automate your disputes, reviews, finances, promotions, and downtime across DoorDash, UberEats, Grubhub, and more.
         </p>
-        
-        <button className="mt-6 bg-[#78C6A3] px-6 py-3 rounded text-white font-semibold">
+
+        <motion.button
+          className="mt-6 bg-[#78C6A3] px-8 py-3 !rounded-4xl text-white font-semibold"
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: false, amount: 0.2 }} // Se ejecuta cada vez que entra un 20% en la vista
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 10,
+          }}
+        >
           Book a Demo →
-        </button>
+        </motion.button>
       </div>
 
       <Canvas className="w-full h-full absolute top-0 left-0" camera={{ position: [0, 0, 5] }}>
