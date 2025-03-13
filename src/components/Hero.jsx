@@ -1,6 +1,6 @@
 import React, { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Box } from "@react-three/drei";
+import { OrbitControls, useGLTF, Box } from "@react-three/drei";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
@@ -28,6 +28,13 @@ function CameraController() {
       onEnd={onEnd}
     />
   );
+}
+
+// Modelo 3D de la letra B
+function LetterB() {
+  const { scene } = useGLTF("/models/B_letter.glb"); // Carga desde public/
+
+  return <primitive object={scene} scale={1.5} position={[0, 0, 0]} />;
 }
 
 const SplineHero = () => {
@@ -78,9 +85,11 @@ const SplineHero = () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[2, 2, 5]} />
         <Suspense fallback={null}>
-          <Box args={[2, 2, 2]} position={[0, 0, 0]}>
+          {/* Se ha comentado el cubo y agregado la letra B */}
+          {/* <Box args={[2, 2, 2]} position={[0, 0, 0]}>
             <meshStandardMaterial attach="material" color="cyan" />
-          </Box>
+          </Box> */}
+          <LetterB />
         </Suspense>
         <CameraController /> {/* Cámara con movimiento automático */}
       </Canvas>
