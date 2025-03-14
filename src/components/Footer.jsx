@@ -2,6 +2,28 @@ import { Mail, Phone } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
+    const productFeaturesLinks = {
+        "Dispute Manager": "/dispute-manager",
+        "Promotions Manager": "/promotion-manager",
+        "Downtime Controller": "/downtime-controller",
+        "Reviews and Ratings": "/reviews-ratings",
+        "Finance and Reconciliation": "/finance",
+        "Analytics and Insights": "/analytics-insights",
+    };
+
+    const companyLinks = {
+        "Success Stories": "/success-stories",
+        "Blogs": "/blogs",
+        "Privacy Policy": "/privacy-policy",
+    };
+
+    const socialMediaLinks = [
+        { Icon: FaYoutube, url: "https://www.youtube.com" },
+        { Icon: FaLinkedin, url: "https://www.linkedin.com" },
+        { Icon: FaInstagram, url: "https://www.instagram.com" },
+        { Icon: FaXTwitter, url: "https://twitter.com" },
+    ];
+
     return (
         <footer className="bg-black text-white py-10 px-6">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-0">
@@ -33,9 +55,9 @@ const Footer = () => {
                 <div className="mt-12 text-left">
                     <p className="font-normal mb-2 text-gray-500 ml-7">Product Features</p>
                     <ul className="text-sm space-y-1 pl-0">
-                        {["Dispute Manager", "Promotions Manager", "Downtime Controller", "Reviews and Ratings", "Finance and Reconciliation", "Analytics and Insights"].map((name, index) => (
+                        {Object.entries(productFeaturesLinks).map(([name, route], index) => (
                             <li key={index} className="pl-0">
-                                <a href="#" className="text-white hover:underline">
+                                <a href={route} className="text-white hover:underline">
                                     {name}
                                 </a>
                             </li>
@@ -47,9 +69,9 @@ const Footer = () => {
                 <div className="mt-12 text-left">
                     <p className="font-normal mb-2 text-gray-500 ml-7">Company</p>
                     <ul className="text-sm space-y-1 pl-0">
-                        {["About Us", "Success Stories", "Blogs", "Privacy Policy"].map((name, index) => (
+                        {Object.entries(companyLinks).map(([name, route], index) => (
                             <li key={index} className="pl-0">
-                                <a href="#" className="text-white hover:underline">
+                                <a href={route} className="text-white hover:underline">
                                     {name}
                                 </a>
                             </li>
@@ -63,18 +85,13 @@ const Footer = () => {
             <div className="border-t border-gray-800 mt-12 pt-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center w-full px-6">
                     <div className="flex gap-6 mb-4 md:mb-0">
-                        {[FaYoutube, FaLinkedin, FaInstagram, FaXTwitter].map((Icon, index) => (
-                            <a key={index} href="#" target="_blank" rel="noopener noreferrer">
+                        {socialMediaLinks.map(({ Icon, url }, index) => (
+                            <a key={index} href={url} target="_blank" rel="noopener noreferrer">
                                 <Icon className="h-6 w-6 text-white hover:text-gray-400 transition-colors duration-300" />
                             </a>
                         ))}
                     </div>
                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
-                </div>
-            </div>
-            <div className="items-center justify-between">
-                <div className=" md:flex-row justify-between items-center w-full px-6">
-                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
                 </div>
             </div>
         </footer>
