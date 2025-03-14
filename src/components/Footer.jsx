@@ -59,15 +59,18 @@ const Footer = () => {
             </div>
 
             {/* Social Icons y Derechos */}
-            <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center w-full">
-                <div className="flex gap-6 mb-4 md:mb-0">
-                    {[FaYoutube, FaLinkedin, FaInstagram, FaXTwitter].map((Icon, index) => (
-                        <a key={index} href="#" target="_blank" rel="noopener noreferrer">
-                            <Icon className="h-6 w-6 text-white hover:text-gray-400 transition-colors duration-300" />
-                        </a>
-                    ))}
+            {/* Social Icons y Derechos */}
+            <div className="border-t border-gray-800 mt-12 pt-6">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center w-full px-6">
+                    <div className="flex gap-6 mb-4 md:mb-0">
+                        {[FaYoutube, FaLinkedin, FaInstagram, FaXTwitter].map((Icon, index) => (
+                            <a key={index} href="#" target="_blank" rel="noopener noreferrer">
+                                <Icon className="h-6 w-6 text-white hover:text-gray-400 transition-colors duration-300" />
+                            </a>
+                        ))}
+                    </div>
+                    <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
                 </div>
-                <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
             </div>
         </footer>
     );
