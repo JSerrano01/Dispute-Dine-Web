@@ -6,15 +6,10 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import DashboardPage from "./pages/DashboardPage";
-import SuccessStories from "./pages/SuccessStories"; // Importa el nuevo componente
-
-const Layout = ({ children }) => {
-  return (
-    <div className="relative w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      {children}
-    </div>
-  );
-};
+import SuccessStories from "./pages/SuccessStories";
+import SuccessStoryDetail from "./pages/SuccessStoryDetail";
+import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail"; // Importar la nueva página
 
 const App = () => {
   return (
@@ -28,7 +23,10 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/success-stories" element={<SuccessStories />} /> {/* Nueva ruta */}
+          <Route path="/success-stories" element={<SuccessStories />} />
+          <Route path="/success-stories/:id" element={<SuccessStoryDetail />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogDetail />} />
         </Routes>
 
         <Footer />

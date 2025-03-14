@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const SuccessStoryCard = ({ id, title, description, image }) => {
+const BlogsCard = ({ id, title, description, image, date }) => {
   const navigate = useNavigate();
 
   return (
@@ -17,11 +17,18 @@ const SuccessStoryCard = ({ id, title, description, image }) => {
           <p className="text-gray-500 mb-4">{description}</p>
         </div>
 
+        {/* Sección "Posted on" con la fecha */}
+        <div className="mt-4 mb-6">
+          <p className="!text-sm text-gray-400">
+            Posted on: <span className="text-gray-400 !text-sm">{date}</span>
+          </p>
+        </div>
+
         {/* Botón alineado en la parte inferior */}
         <div className="mt-auto">
           <button
-            onClick={() => navigate(`/success-stories/${id}`)}
-            className="inline-flex items-center !text-[#56AB92] font-medium border-2 border-[#56AB92] px-14 py-2 !rounded-md hover:bg-[#56AB92] hover:!text-white transition-colors duration-500"
+            onClick={() => navigate(`/blog/${id}`)}
+            className="inline-flex items-center !text-[#56AB92] !font-medium border-2 !border-[#56AB92] px-6 py-2 !rounded-md hover:bg-[#56AB92] hover:!text-white transition-colors duration-500"
           >
             Read this history
             <svg
@@ -45,4 +52,4 @@ const SuccessStoryCard = ({ id, title, description, image }) => {
   );
 };
 
-export default SuccessStoryCard;
+export default BlogsCard;

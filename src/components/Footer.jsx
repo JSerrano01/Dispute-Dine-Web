@@ -20,7 +20,7 @@ const Footer = () => {
                 </div>
 
                 {/* Columna 2 - Dirección */}
-                <div className="mt-12 ml-35 sm:ml-10">
+                <div className="mt-12 ml-35 max-sm:ml-7 max-md:ml-7 lg:ml-35 xl:ml-35">
                     <p className="font-normal mb-2 text-gray-500">Address</p>
                     <p className="text-sm">
                         2261, Market Street <br />

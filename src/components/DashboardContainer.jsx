@@ -3,7 +3,7 @@ import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/solid";
 import { Rocket } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
-
+import Card from "./Card"; // Importa el componente Card
 
 // Datos del gráfico
 const data = [
@@ -37,8 +37,8 @@ const PromotionsGraph = () => {
 const DashboardContainer = () => {
     return (
         <div className="flex flex-col sm:flex-row gap-6 p-6 bg-[#FAFAFA] min-h-item">
-            {/* Dispute Manager (70% de ancho) */}
-            <div className="w-[70%] bg-white rounded-xl shadow-lg p-6">
+            {/* Dispute Manager (70% de ancho en pantallas grandes, 100% en móviles) */}
+            <Card className="w-full sm:w-[60%]">
                 <div className="flex items-center gap-2 text-gray-500 font-semibold">
                     <ChatBubbleLeftEllipsisIcon className="w-5 h-5" />
                     <span>DISPUTE MANAGER</span>
@@ -51,7 +51,7 @@ const DashboardContainer = () => {
                 </p>
 
                 {/* Etiquetas de marketplaces */}
-                <div className="flex gap-2 mt-4">
+                <div className="flex gap-2 mt-4 flex-wrap">
                     {["DOORDASH", "UBER EATS", "GRUBHUB", "DOORDASH DRIVE"].map((item, index) => (
                         <motion.span
                             key={item}
@@ -60,8 +60,8 @@ const DashboardContainer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}
                             transition={{
-                                duration: 0.2, // Animación más rápida
-                                delay: index * 0.3, // Cascada rápida (cada uno aparece con 0.15s de diferencia)
+                                duration: 0.2,
+                                delay: index * 0.3,
                                 ease: "easeOut",
                             }}
                         >
@@ -89,19 +89,19 @@ const DashboardContainer = () => {
                     ].map((user, index, arr) => (
                         <div
                             key={user.name}
-                            className={`grid grid-cols-[1.5fr_1fr_auto] items-center gap-4 py-3 ${index !== arr.length - 1 ? "" : ""}`}
+                            className={`flex flex-col sm:flex-row items-center justify-between gap-4 py-3 ${index !== arr.length - 1 ? "border-b border-gray-200" : ""}`}
                         >
                             {/* Logo y Nombre (en la misma fila) */}
                             <div className="flex items-center gap-3">
-                                <img src={user.logo} alt={user.name} className="w-10 h-10 rounded-full object-cover" />
-                                <p className="text-gray-700 font-medium">{user.name}</p>
+                                <img src={user.logo} alt={user.name} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover" />
+                                <p className="text-gray-700 font-medium text-sm sm:text-base">{user.name}</p>
                             </div>
 
                             {/* Precio (centrado) */}
-                            <p className="text-gray-500 font-semibold text-center">{user.amount}</p>
+                            <p className="text-gray-500 font-semibold text-sm sm:text-base">{user.amount}</p>
 
                             {/* Botón */}
-                            <span className="bg-[#78C6A3] border border-[#78C6A3] !text-[#FAFAFA] px-4 py-2 rounded-3xl font-normal text-sm transition-colors duration-300 hover:bg-[#56AB92] hover:text-white">
+                            <span className="bg-[#78C6A3] border border-[#78C6A3] !text-[#FAFAFA] px-3 py-1 sm:px-4 sm:py-2 rounded-3xl font-normal text-xs sm:text-sm transition-colors duration-300 hover:bg-[#56AB92] hover:text-white">
                                 Dispute
                             </span>
                         </div>
@@ -112,7 +112,7 @@ const DashboardContainer = () => {
                         className="border-1 border-[#99E2B4] px-4 py-2 !rounded-2xl text-[#56AB92] flex items-center gap-2 hover:bg-[#56AB92] hover:text-[#FAFAFA] transition-colors duration-500"
                         initial={{ scale: 0.5, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: false, amount: 0.2 }} // Se ejecuta cada vez que entra un 20% en la vista
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             type: "spring",
                             stiffness: 200,
@@ -122,10 +122,10 @@ const DashboardContainer = () => {
                         View Details ➝
                     </motion.button>
                 </div>
-            </div>
+            </Card>
 
-            {/* Promotions Manager (30% de ancho) */}
-            <div className="w-[45%] rounded-xl shadow-lg p-6 bg-[#56AB92]">
+            {/* Promotions Manager (30% de ancho en pantallas grandes, 100% en móviles) */}
+            <Card className="w-full sm:w-[40%] !bg-[#56AB92]">
                 <div className="flex items-center gap-2">
                     <Rocket className="w-5 h-5 text-[#FAFAFA]" />
                     <span className="font-semibold text-[#FAFAFA]">PROMOTIONS MANAGER</span>
@@ -136,7 +136,7 @@ const DashboardContainer = () => {
                 </p>
 
                 {/* Etiquetas de marketplaces */}
-                <div className="flex gap-2 mt-4 font-medium">
+                <div className="flex gap-2 mt-4 font-medium flex-wrap">
                     {["DOORDASH", "UBER EATS", "GRUBHUB"].map((item, index) => (
                         <motion.span
                             key={item}
@@ -145,8 +145,8 @@ const DashboardContainer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.2 }}
                             transition={{
-                                duration: 0.2, // Animación más rápida
-                                delay: index * 0.3, // Cascada rápida (cada uno aparece con 0.15s de diferencia)
+                                duration: 0.2,
+                                delay: index * 0.3,
                                 ease: "easeOut",
                             }}
                         >
@@ -165,7 +165,7 @@ const DashboardContainer = () => {
                         className="border border-white px-4 py-2 !rounded-2xl text-[#FAFAFA] flex items-center gap-2 hover:bg-white hover:text-[#56AB92] transition-colors duration-500"
                         initial={{ scale: 0.5, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: false, amount: 0.2 }} // Se ejecuta cada vez que entra un 20% en la vista
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{
                             type: "spring",
                             stiffness: 200,
@@ -175,7 +175,7 @@ const DashboardContainer = () => {
                         View Details ➝
                     </motion.button>
                 </div>
-            </div>
+            </Card>
         </div>
     );
 };

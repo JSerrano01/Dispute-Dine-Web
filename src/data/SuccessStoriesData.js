@@ -6,6 +6,7 @@ const SuccessStoriesData = [
       description: "Priyam Saraswat, CEO of Voosh Data security is at the core of everything we do",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-01"
     },
     {
       id: 2,
@@ -13,6 +14,7 @@ const SuccessStoriesData = [
       description: "$40K Saved in 90 days 500+ Manual hours saved",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-02"
     },
     {
       id: 3,
@@ -20,6 +22,7 @@ const SuccessStoriesData = [
       description: "Deric Rosenbaum, President of Groucho's Deli Shares about Voosh's automated dispute resolution.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-03"
     },
     {
       id: 4,
@@ -27,6 +30,7 @@ const SuccessStoriesData = [
       description: "Aumentamos sus reservas en un 200% con campañas personalizadas.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-04"
     },
     {
       id: 5,
@@ -34,6 +38,7 @@ const SuccessStoriesData = [
       description: "Implementamos un sistema de inventario que redujo pérdidas en un 40%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-05"
     },
     {
       id: 6,
@@ -41,6 +46,7 @@ const SuccessStoriesData = [
       description: "Incrementamos sus membresías en un 120% con estrategias de fidelización.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-06"
     },
     {
       id: 7,
@@ -48,6 +54,7 @@ const SuccessStoriesData = [
       description: "Diseñamos una experiencia de cliente que aumentó las reseñas positivas en un 80%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-07"
     },
     {
       id: 8,
@@ -55,6 +62,7 @@ const SuccessStoriesData = [
       description: "Automatizamos su proceso de pedidos, reduciendo tiempos de espera en un 50%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-08"
     },
     {
       id: 9,
@@ -62,6 +70,7 @@ const SuccessStoriesData = [
       description: "Creamos una campaña de marketing que aumentó las ventas en un 90%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-09"
     },
     {
       id: 10,
@@ -69,6 +78,7 @@ const SuccessStoriesData = [
       description: "Implementamos un sistema de reservas en línea que incrementó las citas en un 60%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-10"
     },
     {
       id: 11,
@@ -76,6 +86,7 @@ const SuccessStoriesData = [
       description: "Diseñamos una estrategia de redes sociales que aumentó el engagement en un 70%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-11"
     },
     {
       id: 12,
@@ -83,6 +94,7 @@ const SuccessStoriesData = [
       description: "Optimizamos su menú, aumentando la satisfacción del cliente en un 85%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-12"
     },
     {
       id: 13,
@@ -90,6 +102,7 @@ const SuccessStoriesData = [
       description: "Creamos una campaña navideña que incrementó las ventas en un 150%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-14"
     },
     {
       id: 14,
@@ -97,6 +110,7 @@ const SuccessStoriesData = [
       description: "Implementamos eventos culturales que aumentaron la afluencia en un 60%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-15"
     },
     {
       id: 15,
@@ -104,6 +118,7 @@ const SuccessStoriesData = [
       description: "Diseñamos un menú saludable que atrajo a un 40% más de clientes.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-16"
     },
     {
       id: 16,
@@ -111,6 +126,7 @@ const SuccessStoriesData = [
       description: "Creamos un club de lectura que incrementó las ventas en un 30%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-17"
     },
     {
       id: 17,
@@ -118,6 +134,7 @@ const SuccessStoriesData = [
       description: "Implementamos un programa de fidelización que aumentó las visitas recurrentes en un 50%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-18"
     },
     {
       id: 18,
@@ -125,6 +142,7 @@ const SuccessStoriesData = [
       description: "Optimizamos la logística, reduciendo los tiempos de entrega en un 25%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-19"
     },
     {
       id: 19,
@@ -132,6 +150,7 @@ const SuccessStoriesData = [
       description: "Creamos una campaña de lanzamiento que aumentó las ventas en un 200%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-20"
     },
     {
       id: 20,
@@ -139,6 +158,7 @@ const SuccessStoriesData = [
       description: "Diseñamos una experiencia única que aumentó las reseñas positivas en un 90%.",
       image: "https://picsum.photos/1280/720",
       link: "#",
+      date: "2023-10-21"
     },
   ];
   
