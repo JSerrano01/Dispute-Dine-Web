@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import DashboardPage from "./pages/DashboardPage";
+import SuccessStories from "./pages/SuccessStories"; // Importa el nuevo componente
 
 const Layout = ({ children }) => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/success-stories" element={<SuccessStories />} /> {/* Nueva ruta */}
         </Routes>
 
         <Footer />
