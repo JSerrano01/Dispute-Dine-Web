@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // Importar useLocation
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Agrega useNavigate
 import { FiMenu, FiX } from "react-icons/fi";
 import {
   ChartBarIcon,
@@ -80,12 +80,13 @@ function DropdownMenu({ isOpen, onItemClick }) {
 function NavbarLinks({ isScrolled }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation(); // Obtener la ubicación actual
+  const navigate = useNavigate(); // Usar useNavigate para la navegación
 
   const handleProductFeaturesClick = () => {
     if (location.pathname === "/product-features") {
       setIsDropdownOpen(!isDropdownOpen); // Alternar el dropdown si ya está en la página
     } else {
-      window.location.href = "/product-features"; // Redirigir a la página
+      navigate("/product-features"); // Navegar a la página usando useNavigate
     }
   };
 
@@ -124,6 +125,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const location = useLocation(); // Obtener la ubicación actual
+  const navigate = useNavigate(); // Usar useNavigate para la navegación
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 0);
@@ -142,7 +144,7 @@ export default function Navbar() {
     if (location.pathname === "/product-features") {
       setIsMobileDropdownOpen(!isMobileDropdownOpen); // Alternar el dropdown si ya está en la página
     } else {
-      window.location.href = "/product-features"; // Redirigir a la página
+      navigate("/product-features"); // Navegar a la página usando useNavigate
     }
   };
 

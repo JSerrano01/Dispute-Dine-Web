@@ -20,11 +20,9 @@ const SuccessStoryDetail = () => {
 
             {/* Sección de historias recomendadas con fondo blanco */}
             <div>
-      {/* Contenido del blog */}
-      <h1>Blog Detail {id}</h1>
 
       {/* Recomendaciones */}
-      <RecommendedBlogs currentBlogId={id} />
+                <RecommendedStories currentBlogId={id} />
     </div>
         </div>
     );

@@ -70,7 +70,7 @@ const BlogsSlider = () => {
                                         Posted on: <span className="text-gray-400">{blog.date}</span>
                                     </p>
                                     <button
-                                        onClick={() => navigate(blog.link)}
+                                        onClick={() => navigate(blog.link)} // Navega al enlace del blog
                                         className="mt-auto !text-[#56AB92] !font-medium border-2 !border-[#56AB92] px-6 py-2 !rounded-md hover:bg-[#56AB92] hover:!text-white transition-colors duration-500"
                                     >
                                         Read more →
