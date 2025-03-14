@@ -27,7 +27,7 @@ const BlogsCard = ({ id, title, description, image, date }) => {
         {/* Botón alineado en la parte inferior */}
         <div className="mt-auto">
           <button
-            onClick={() => navigate(`/blog/${id}`)}
+            onClick={() => navigate(`/blogs/${id}`)}
             className="inline-flex items-center !text-[#56AB92] !font-medium border-2 !border-[#56AB92] px-6 py-2 !rounded-md hover:bg-[#56AB92] hover:!text-white transition-colors duration-500"
           >
             Read this history
