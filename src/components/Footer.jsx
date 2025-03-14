@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom"; // Importar Link
 
 const Footer = () => {
     const productFeaturesLinks = {
@@ -57,9 +58,9 @@ const Footer = () => {
                     <ul className="text-sm space-y-1 pl-0">
                         {Object.entries(productFeaturesLinks).map(([name, route], index) => (
                             <li key={index} className="pl-0">
-                                <a href={route} className="text-white hover:underline">
+                                <Link to={route} className="text-white hover:underline">
                                     {name}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -71,16 +72,15 @@ const Footer = () => {
                     <ul className="text-sm space-y-1 pl-0">
                         {Object.entries(companyLinks).map(([name, route], index) => (
                             <li key={index} className="pl-0">
-                                <a href={route} className="text-white hover:underline">
+                                <Link to={route} className="text-white hover:underline">
                                     {name}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
 
-            {/* Social Icons y Derechos */}
             {/* Social Icons y Derechos */}
             <div className="border-t border-gray-800 mt-12 pt-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center w-full px-6">
