@@ -107,7 +107,8 @@ const SplineHero = () => {
         <CameraController />
       </Canvas>
 
-      <p className="absolute bottom-10 text-xs sm:text-sm text-gray-400 z-10">
+      {/* Texto "Press and drag to orbit" más arriba */}
+      <p className="absolute top-[70%] !text-lg sm:text-sm text-gray-400 z-10">
         Press and drag to orbit
       </p>
     </section>

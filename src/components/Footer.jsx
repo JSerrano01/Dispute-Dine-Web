@@ -72,6 +72,11 @@ const Footer = () => {
                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
                 </div>
             </div>
+            <div className="items-center justify-between">
+                <div className=" md:flex-row justify-between items-center w-full px-6">
+                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
+                </div>
+            </div>
         </footer>
     );
 };

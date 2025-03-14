@@ -12,7 +12,7 @@ const data = [
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white text-black p-2 rounded-lg shadow-md border border-gray-300 text-xs">
+      <div className="bg-white text-black p-2 rounded-lg shadow-md border border-gray-300 text-xs z-50">
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full" style={{ background: payload[0].color }}></span>
           {payload[0].name}: ${payload[0].value.toLocaleString()}
@@ -29,7 +29,7 @@ const FinanceChart = () => {
       initial={{ scale: 0.9 }}
       animate={{ scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="relative flex justify-center items-center"
+      className="relative flex justify-center items-center select-none" // Agregar select-none para evitar selección de texto
     >
       <PieChart width={250} height={250}>
         <Pie
@@ -40,12 +40,13 @@ const FinanceChart = () => {
           outerRadius={110}
           dataKey="value"
           stroke="none"
+          style={{ outline: "none" }} // Evitar el borde al hacer clic
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={entry.color} style={{ zIndex: 1 }} />
+            <Cell key={`cell-${index}`} fill={entry.color} style={{ outline: "none" }} />
           ))}
         </Pie>
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomTooltip />} wrapperStyle={{ zIndex: 100 }} />
       </PieChart>
 
       {/* Texto central */}

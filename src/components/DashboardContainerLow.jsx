@@ -5,6 +5,7 @@ import DashboardContainer from "./DashboardContainer";
 import FinanceChart from "./FinanceChart"; // 📌 Ya está importado
 import RatingGauge from "./RatingGauge"; // 📌 Importa el gráfico
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 const data = [
   { value: 10 }, { value: 30 }, { value: 20 }, { value: 50 }, { value: 45 }, { value: 70 }, { value: 100 }
@@ -19,6 +20,14 @@ const RatingsGraph = () => (
 );
 
 const DashboardContainerLower = () => {
+  const navigate = useNavigate(); // Hook para navegación
+
+  // Función para manejar la navegación
+  const handleViewDetails = (title) => {
+    const route = title.toLowerCase().replace(/\s+/g, "-"); // Convertir título a ruta
+    navigate(`/${route}`); // Navegar a la ruta
+  };
+
   return (
     <div className="flex flex-col sm:flex-row gap-6 p-6 bg-[#FAFAFA] min-h-item">
       {/* Ratings Card */}
@@ -63,6 +72,7 @@ const DashboardContainerLower = () => {
               stiffness: 200,
               damping: 10,
             }}
+            onClick={() => handleViewDetails("REVIEWS AND RATINGS")} // Navegar a la ruta
           >
             View Details ➝
           </motion.button>
@@ -104,6 +114,7 @@ const DashboardContainerLower = () => {
               stiffness: 200,
               damping: 10,
             }}
+            onClick={() => handleViewDetails("FINANCE AND RECONCILIATION")} // Navegar a la ruta
           >
             View Details ➝
           </motion.button>

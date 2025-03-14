@@ -4,6 +4,7 @@ import { Rocket } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
 import Card from "./Card"; // Importa el componente Card
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 // Datos del gráfico
 const data = [
@@ -35,6 +36,14 @@ const PromotionsGraph = () => {
 };
 
 const DashboardContainer = () => {
+    const navigate = useNavigate(); // Hook para navegación
+
+    // Función para manejar la navegación
+    const handleViewDetails = (title) => {
+        const route = title.toLowerCase().replace(/\s+/g, "-"); // Convertir título a ruta
+        navigate(`/${route}`); // Navegar a la ruta
+    };
+
     return (
         <div className="flex flex-col sm:flex-row gap-6 p-6 bg-[#FAFAFA] min-h-item">
             {/* Dispute Manager (70% de ancho en pantallas grandes, 100% en móviles) */}
@@ -118,6 +127,7 @@ const DashboardContainer = () => {
                             stiffness: 200,
                             damping: 10,
                         }}
+                        onClick={() => handleViewDetails("DISPUTE MANAGER")} // Navegar a la ruta
                     >
                         View Details ➝
                     </motion.button>
@@ -171,6 +181,7 @@ const DashboardContainer = () => {
                             stiffness: 200,
                             damping: 10,
                         }}
+                        onClick={() => handleViewDetails("PROMOTIONS MANAGER")} // Navegar a la ruta
                     >
                         View Details ➝
                     </motion.button>

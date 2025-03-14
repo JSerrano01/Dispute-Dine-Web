@@ -49,7 +49,7 @@ const ROICalculator = () => {
 
                         {/* Botón */}
                         <div className="flex items-end">
-                            <button className="w-full bg-[#99E2B4] text-[#FAFAFA] font-semibold py-[10px] px-6 rounded-lg hover:bg-gray-100 hover:text-[#99E2B4] transition-colors duration-500">
+                            <button className="w-full bg-[#99E2B4] text-[#FAFAFA] font-semibold py-[10px] px-6 !rounded-lg hover:bg-gray-100 hover:text-[#99E2B4] transition-colors duration-500">
                                 Calculate My ROI
                             </button>
                         </div>

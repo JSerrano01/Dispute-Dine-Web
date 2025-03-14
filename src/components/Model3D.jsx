@@ -54,7 +54,7 @@ const Model3D = () => {
   }, []);
 
   return (
-    <div className="w-full h-[800px] bg-black"> {/* Altura reducida */}
+    <div className="w-full h-[800px] bg-black relative"> {/* Altura reducida y posición relativa */}
       <Canvas className="w-full h-full" camera={{ position: cameraPosition }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[2, 2, 5]} />
@@ -63,6 +63,11 @@ const Model3D = () => {
         </Suspense>
         <CameraController />
       </Canvas>
+
+      {/* Texto "Press and drag to orbit" */}
+      <p className="absolute top-[60%] left-1/2 transform -translate-x-1/2 !text-lg sm:text-sm text-gray-400 z-10">
+        Press and drag to orbit
+      </p>
     </div>
   );
 };

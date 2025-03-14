@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Importar useLocation
 import { FiMenu, FiX } from "react-icons/fi";
 import {
   ChartBarIcon,
@@ -13,76 +13,89 @@ import {
 import "animate.css";
 
 const dropdownItems = [
-    { 
-      icon: <ChartBarIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Dispute Manager", 
-      desc: "Take Control of Your Revenue", 
-      path: "/dispute-manager" 
-    },
-    { 
-      icon: <RocketLaunchIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Promotion Manager", 
-      desc: "Drive Exceptional Campaign Results", 
-      path: "/promotion-manager" 
-    },
-    { 
-      icon: <ClockIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Downtime Controller", 
-      desc: "Maximize Revenue with Zero Downtime", 
-      path: "/downtime-controller" 
-    },
-    { 
-      icon: <StarIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Reviews & Ratings", 
-      desc: "Manage Your Online Reputation", 
-      path: "/reviews-ratings" 
-    },
-    { 
-      icon: <CurrencyDollarIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Finance & Reconciliation", 
-      desc: "Simplify Your Finances", 
-      path: "/finance-reconciliation" 
-    },
-    { 
-      icon: <ChartPieIcon className="h-5 w-5 text-gray-700" />, 
-      title: "Analytics & Insights", 
-      desc: "Unlock the Power of Data", 
-      path: "/analytics-insights" 
-    },
-  ];
+  {
+    icon: <ChartBarIcon className="h-5 w-5 text-gray-700" />,
+    title: "Dispute Manager",
+    desc: "Take Control of Your Revenue",
+    path: "/dispute-manager"
+  },
+  {
+    icon: <CurrencyDollarIcon className="h-5 w-5 text-gray-700" />,
+    title: "Finance & Reconciliation",
+    desc: "Simplify Your Finances",
+    path: "/finance"
+  },
+  {
+    icon: <RocketLaunchIcon className="h-5 w-5 text-gray-700" />,
+    title: "Promotion Manager",
+    desc: "Drive Exceptional Campaign Results",
+    path: "/promotion-manager"
+  },
+  {
+    icon: <ClockIcon className="h-5 w-5 text-gray-700" />,
+    title: "Downtime Controller",
+    desc: "Maximize Revenue with Zero Downtime",
+    path: "/downtime-controller"
+  },
+  {
+    icon: <StarIcon className="h-5 w-5 text-gray-700" />,
+    title: "Reviews & Ratings",
+    desc: "Manage Your Online Reputation",
+    path: "/reviews-ratings"
+  },
+  {
+    icon: <ChartPieIcon className="h-5 w-5 text-gray-700" />,
+    title: "Analytics & Insights",
+    desc: "Unlock the Power of Data",
+    path: "/analytics-insights"
+  },
+];
+
 const navLinks = [
   { name: "Success Stories", path: "/success-stories" },
   { name: "Blogs", path: "/blogs" },
 ];
 
 function DropdownMenu({ isOpen, onItemClick }) {
-    return isOpen ? (
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-0 w-80 bg-[#FAFAFA] rounded-lg shadow-lg p-3 grid grid-cols-1 gap-1">
-        {dropdownItems.map((item, index) => (
-          <Link
-            key={index}
-            to={item.path}
-            className="flex items-center px-2 py-1 gap-3 hover:bg-gray-100 rounded-lg cursor-pointer transition-all"
-            onClick={onItemClick}
-          >
-            {item.icon}
-            <div className="flex flex-col gap-0 leading-tight">
-              <p className="font-semibold text-gray-900 text-sm">{item.title}</p>
-              <p className="text-xs text-gray-500">{item.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    ) : null;
-  }
+  return isOpen ? (
+    <div className="absolute left-1/2 transform -translate-x-1/2 mt-0 w-80 bg-[#FAFAFA] rounded-lg shadow-lg p-3 grid grid-cols-1 gap-1">
+      {dropdownItems.map((item, index) => (
+        <Link
+          key={index}
+          to={item.path}
+          className="flex items-center px-2 py-1 gap-3 hover:bg-gray-100 rounded-lg cursor-pointer transition-all"
+          onClick={onItemClick}
+        >
+          {item.icon}
+          <div className="flex flex-col gap-0 leading-tight">
+            <p className="font-semibold text-gray-900 text-sm">{item.title}</p>
+            <p className="text-xs text-gray-500">{item.desc}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  ) : null;
+}
 
 function NavbarLinks({ isScrolled }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation(); // Obtener la ubicación actual
+
+  const handleProductFeaturesClick = () => {
+    if (location.pathname === "/product-features") {
+      setIsDropdownOpen(!isDropdownOpen); // Alternar el dropdown si ya está en la página
+    } else {
+      window.location.href = "/product-features"; // Redirigir a la página
+    }
+  };
 
   return (
     <div className="hidden lg:flex items-center space-x-6 text-base font-medium">
       <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
-        <button className={`transition-colors duration-500 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"}`}>
+        <button
+          onClick={handleProductFeaturesClick}
+          className={`transition-colors duration-500 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"}`}
+        >
           Product Features ▾
         </button>
         <DropdownMenu isOpen={isDropdownOpen} />
@@ -107,73 +120,83 @@ function NavbarLinks({ isScrolled }) {
 }
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
-  
-    useEffect(() => {
-      const handleScroll = () => setIsScrolled(window.scrollY > 0);
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-  
-    // Función para cerrar el menú móvil al hacer clic en un elemento del dropdown
-    const handleDropdownItemClick = () => {
-      setIsMobileMenuOpen(false);
-      setIsMobileDropdownOpen(false);
-    };
-  
-    return (
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled || isMobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"}`}>
-        <div className="container mx-auto flex justify-between items-center h-20 px-6 md:px-10 xl:px-40">
-          <Link to="/">
-            <img
-              src={(isScrolled || isMobileMenuOpen) ? "/img/logoNavbarDark.png" : "/img/logoNavbarLight.png"}
-              alt="Logo"
-              className="h-30 w-auto transition-all duration-300"
-            />
-          </Link>
-          {/* Desktop Links */}
-          <NavbarLinks isScrolled={isScrolled} />
-          {/* Mobile Menu Button */}
-          <button
-            className={`lg:hidden text-4xl transition-colors duration-500 ${isMobileMenuOpen || isScrolled ? "text-black" : "text-white"}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
-          </button>
-        </div>
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-5 transition-all duration-300">
-            <div className="relative">
-              <button
-                className="text-black !text-lg font-medium hover:text-gray-700 transition-colors duration-300"
-                onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-              >
-                Product Features ▾
-              </button>
-              <DropdownMenu isOpen={isMobileDropdownOpen} onItemClick={handleDropdownItemClick} />
-            </div>
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                to={link.path}
-                className="text-black text-lg font-medium hover:text-gray-700 transition-colors duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const location = useLocation(); // Obtener la ubicación actual
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Función para cerrar el menú móvil al hacer clic en un elemento del dropdown
+  const handleDropdownItemClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileDropdownOpen(false);
+  };
+
+  // Función para manejar el clic en "Product Features" en el menú móvil
+  const handleMobileProductFeaturesClick = () => {
+    if (location.pathname === "/product-features") {
+      setIsMobileDropdownOpen(!isMobileDropdownOpen); // Alternar el dropdown si ya está en la página
+    } else {
+      window.location.href = "/product-features"; // Redirigir a la página
+    }
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled || isMobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"}`}>
+      <div className="container mx-auto flex justify-between items-center h-20 px-6 md:px-10 xl:px-40">
+        <Link to="/">
+          <img
+            src={(isScrolled || isMobileMenuOpen) ? "/img/logoNavbarDark.png" : "/img/logoNavbarLight.png"}
+            alt="Logo"
+            className="h-30 w-auto transition-all duration-300"
+          />
+        </Link>
+        {/* Desktop Links */}
+        <NavbarLinks isScrolled={isScrolled} />
+        {/* Mobile Menu Button */}
+        <button
+          className={`lg:hidden text-4xl transition-colors duration-500 ${isMobileMenuOpen || isScrolled ? "text-black" : "text-white"}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
+        </button>
+      </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-5 transition-all duration-300">
+          <div className="relative">
+            <button
+              className="text-black !text-lg font-medium hover:text-gray-700 transition-colors duration-300"
+              onClick={handleMobileProductFeaturesClick}
+            >
+              Product Features ▾
+            </button>
+            <DropdownMenu isOpen={isMobileDropdownOpen} onItemClick={handleDropdownItemClick} />
+          </div>
+          {navLinks.map((link, index) => (
             <Link
-              to="/book-demo"
-              className="bg-[#78C6A3] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#56AB92] transition-colors duration-300"
+              key={index}
+              to={link.path}
+              className="text-black text-lg font-medium hover:text-gray-700 transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Book Demo
+              {link.name}
             </Link>
-          </div>
-        )}
-      </nav>
-    );
-  }
+          ))}
+          <Link
+            to="/book-demo"
+            className="bg-[#78C6A3] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#56AB92] transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Book Demo
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
+}

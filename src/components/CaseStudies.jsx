@@ -1,71 +1,77 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SuccessStoriesData from "../data/SuccessStoriesData"; // Importa los datos
 
-const caseStudies = [
-    {
-        id: 1,
-        company: "mcdonalds.com",
-        title: "McDonald's Franchisee Saves $40K in 90 Days with Voosh Automation",
-        stats: [{ value: "$40K", label: "Saved in 90 days" }, { value: "500+", label: "Manual hours saved" }],
-        buttonText: "Read this story →",
-    },
-    {
-        id: 2,
-        company: "grouchos.com",
-        title: "🚨 Why would you NOT automate it?",
-        author: "Deric Rosenbaum, President of Groucho's Deli",
-        description: "Shares about Voosh's automated dispute resolution.",
-        buttonText: "Read this story →",
-    },
-    {
-        id: 3,
-        company: "plntburger.com",
-        title: "Christopher Treloar, CEO of PLNT Burger, shares how Voosh transformed their operations and saved them thousands! 🏆",
-        author: "Christopher Treloar",
-        description: "Reveals how Voosh saved them thousands.",
-        buttonText: "Read this story →",
-    },
-    {
-        id: 4,
-        company: "google.com",
-        title: "💥 How a Top Bay Area Restaurant Chain Saved Over $500k in a Year 🤯",
-        stats: [{ value: "$500k+", label: "Saved in a Year" }],
-        buttonText: "Read this story →",
-    },
-    {
-        id: 5,
-        company: "disney.com",
-        title: "⚡ Breaking News: Voosh Achieves Significant Financial Recovery for DIG! 💰",
-        stats: [{ value: "4,000", label: "Disputed orders appealed successfully" }, { value: "300 Hrs", label: "Work saved" }],
-        buttonText: "Read this story →",
-    },
-    {
-        id: 6,
-        company: "facebook.com",
-        title: "🤯 Did you know a global food giant is projected to save $340,000 in just 30 days?",
-        stats: [{ value: "$340,000", label: "Projected savings in 30 days" }, { value: "20x", label: "ROI per store" }],
-        buttonText: "Read this story →",
-    },
-];
+const SuccessStoryCard = ({ id, title, description, image, link }) => {
+    const navigate = useNavigate();
+
+    return (
+        <div className="bg-[#FAFAFA] border border-gray-300 rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+            {/* Imagen */}
+            <img src={image} alt={title} className="w-full h-48 object-cover" />
+
+            {/* Contenido de la tarjeta */}
+            <div className="p-6 flex flex-col flex-grow">
+                {/* Título y descripción */}
+                <div className="flex-grow">
+                    <h2 className="text-lg text-black font-semibold mb-2">{title}</h2>
+                    <p className="text-gray-500 mb-4">{description}</p>
+                </div>
+
+                {/* Botón alineado en la parte inferior */}
+                <div className="mt-auto">
+                    <button
+                        onClick={() => navigate(link)} // Navega al enlace de la historia
+                        className="inline-flex items-center !text-[#56AB92] font-medium border-2 border-[#56AB92] px-14 py-2 !rounded-md hover:bg-[#56AB92] hover:!text-white transition-colors duration-500"
+                    >
+                        Read this history
+                        <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const CaseStudies = () => {
+    const navigate = useNavigate();
+
+    // Limitar a 8 historias
+    const limitedStories = SuccessStoriesData.slice(0, 8);
+
     return (
         <div className="bg-[#FAFAFA] py-10 px-6">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-3xl font-bold text-black">Voosh Verified: Case Studies</h2>
-                    <a href="#" className="!text-[#56AB92] !font-medium hover:underline px-20 scale-130">
+                    <h2 className="text-3xl font-bold text-black">Voosh Verified: Success Stories</h2>
+                    <button
+                        onClick={() => navigate("/success-stories")} // Redirige a la página de Success Stories
+                        className="!text-[#56AB92] !font-medium hover:underline px-20 scale-130"
+                    >
                         View all →
-                    </a>
+                    </button>
                 </div>
                 <p className="text-gray-600 mb-6">
-                    From Ghost Kitchens to Multi-Unit Restaurants: Hear How Voosh is Turning 3rd Party Marketplace Data into Dollars.
+                    Discover How Restaurants Are Maximizing Their Potential with Dine.
                 </p>
 
                 {/* Swiper Carousel */}
@@ -73,12 +79,13 @@ const CaseStudies = () => {
                     <Swiper
                         modules={[Navigation, Pagination]}
                         spaceBetween={20}
-                        slidesPerView={1.2}
+                        slidesPerView={1} // 1 slide por vista en pantallas pequeñas
                         loop={true}
                         breakpoints={{
-                            640: { slidesPerView: 1.5 },
-                            768: { slidesPerView: 2.2 },
-                            1024: { slidesPerView: 3 },
+                            // Pantallas pequeñas (menos de 640px): 1 slide
+                            640: { slidesPerView: 1 }, // 1 slide en pantallas pequeñas
+                            768: { slidesPerView: 2 }, // 2 slides en tablets
+                            1024: { slidesPerView: 3 }, // 3 slides en pantallas grandes
                         }}
                         navigation={{
                             prevEl: ".swiper-button-prev",
@@ -90,57 +97,29 @@ const CaseStudies = () => {
                         }}
                         className="pb-10"
                     >
-                        {caseStudies.map((study) => (
-                            <SwiperSlide key={study.id} className="h-auto p-3">
-                                <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
-                                    {/* Image */}
-                                    <img
-                                        src={`https://logo.clearbit.com/${study.company}`}
-                                        alt={study.title}
-                                        className="w-fit h-fit self-center object-contain bg-gray-100 p-4"
-                                    />
-
-                                    {/* Content */}
-                                    <div className="p-4 flex-1 flex flex-col">
-                                        <h3 className="font-semibold !text-lg text-black">{study.title}</h3>
-
-                                        {/* Stats or Author */}
-                                        {study.stats ? (
-                                            <div className="flex gap-2 my-3">
-                                                {study.stats.map((stat, index) => (
-                                                    <div key={index} className="bg-gray-200 px-3 py-1 rounded-md text-sm font-medium text-gray-700">
-                                                        <strong>{stat.value}</strong> <br /> {stat.label}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        ) : (
-                                            <div className="mt-3 bg-gray-200 px-3 py-1 rounded-md text-sm text-gray-700">
-                                                <strong>{study.author}</strong>
-                                                <p>{study.description}</p>
-                                            </div>
-                                        )}
-
-                                        {/* Button */}
-                                        <button className="mt-auto border !border-[#56AB92] text-[#56AB92] hover:bg-[#56AB92] hover:text-[#FAFAFA] transition-olors duration-500 px-4 py-2 !rounded-lg w-full">
-                                            {study.buttonText}
-                                        </button>
-                                    </div>
-                                </div>
+                        {limitedStories.map((story) => (
+                            <SwiperSlide key={story.id} className="h-auto p-3">
+                                <SuccessStoryCard
+                                    id={story.id}
+                                    title={story.title}
+                                    description={story.description}
+                                    image={story.image}
+                                    link={story.link}
+                                />
                             </SwiperSlide>
                         ))}
                     </Swiper>
 
                     {/* Custom navigation buttons */}
                     <button className="swiper-button-prev absolute top-1/2 !left-[-60px] transform -translate-y-1/2 z-10 !text-[#99E2B4] flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-olors duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-colors duration-500">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
                     </button>
-                    <button className="swiper-button-next absolute top-1/2 !right-[-40px] transform -translate-y-1/2 z-10 !text-[#99E2B4] ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-olors duration-500">
+                    <button className="swiper-button-next absolute top-1/2 !right-[-40px] transform -translate-y-1/2 z-10 !text-[#99E2B4]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="!w-16 !h-16 scale-150 hover:text-[#56AB92] transition-colors duration-500">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
-
                     </button>
 
                     {/* Custom pagination */}

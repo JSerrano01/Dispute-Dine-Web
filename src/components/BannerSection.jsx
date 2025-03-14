@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 const Banner = () => {
+    const navigate = useNavigate(); // Hook para navegación
+
+    // Función para manejar la navegación
+    const handleViewDetails = () => {
+        navigate("/product-features"); // Navegar a la ruta /product-features
+    };
+
     return (
         <div className="flex items-center justify-center bg-transparent p-4 md:p-8">
             {/* Contenedor del texto y el botón */}
@@ -10,7 +18,10 @@ const Banner = () => {
                     <span className="text-[#56AB92]">Data-Driven Decisions</span>
                 </p>
                 {/* Botón */}
-                <button className="bg-[#56AB92] hover:bg-[#FAFAFA] text-[#FAFAFA] hover:text-[#56AB92] border-2 border-transparent hover:border-[#56AB92] font-medium px-4 py-2 !rounded-lg flex items-center gap-1 transition">
+                <button
+                    onClick={handleViewDetails} // Manejar el clic del botón
+                    className="bg-[#56AB92] hover:bg-[#FAFAFA] text-[#FAFAFA] hover:text-[#56AB92] border-2 border-transparent hover:border-[#56AB92] font-medium px-4 py-2 !rounded-lg flex items-center gap-1 transition"
+                >
                     View details →
                 </button>
             </div>
