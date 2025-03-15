@@ -1,8 +1,11 @@
 // src/components/FeatureCard.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 const FeatureCard = ({ icon, title, description, buttonText, buttonLink }) => {
+    const navigate = useNavigate(); // Usar useNavigate para la navegación
+
     return (
         <motion.div
             className="bg-[#FAFAFA] p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
@@ -21,12 +24,12 @@ const FeatureCard = ({ icon, title, description, buttonText, buttonLink }) => {
             <p className="text-gray-400 mb-4">{description}</p>
 
             {/* Botón */}
-            <a
-                href={buttonLink}
-                className="bg-[#56AB92] text-white px-4 py-2 rounded-md hover:bg-[#78C6A3] transition-colors duration-300"
+            <button
+                onClick={() => navigate(buttonLink)} // Usar navigate para redirigir
+                className="bg-[#56AB92] text-white px-4 py-2 !rounded-md hover:bg-[#78C6A3] transition-colors duration-300"
             >
                 {buttonText}
-            </a>
+            </button>
         </motion.div>
     );
 };

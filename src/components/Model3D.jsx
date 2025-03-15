@@ -36,25 +36,28 @@ function ModelOnly() {
 
 const Model3D = () => {
   const [cameraPosition, setCameraPosition] = useState([0, 0, 5]); // Default en PC
+  const [containerHeight, setContainerHeight] = useState("800px"); // Altura inicial
 
   useEffect(() => {
-    // Ajustar la cámara dependiendo del tamaño de la pantalla
-    const updateCameraPosition = () => {
+    // Ajustar la cámara y el contenedor dependiendo del tamaño de la pantalla
+    const updateLayout = () => {
       if (window.innerWidth < 768) {
         setCameraPosition([0, 0, 7]); // Más lejos en móviles
+        setContainerHeight("500px"); // Altura reducida para móviles
       } else {
         setCameraPosition([0, 0, 5]); // Normal en pantallas grandes
+        setContainerHeight("800px"); // Altura normal para pantallas grandes
       }
     };
 
-    updateCameraPosition(); // Ajustar al cargar
-    window.addEventListener("resize", updateCameraPosition); // Detectar cambios
+    updateLayout(); // Ajustar al cargar
+    window.addEventListener("resize", updateLayout); // Detectar cambios
 
-    return () => window.removeEventListener("resize", updateCameraPosition);
+    return () => window.removeEventListener("resize", updateLayout);
   }, []);
 
   return (
-    <div className="w-full h-[800px] bg-black relative"> {/* Altura reducida y posición relativa */}
+    <div className="w-full" style={{ height: containerHeight, backgroundColor: 'black', position: 'relative' }}>
       <Canvas className="w-full h-full" camera={{ position: cameraPosition }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[2, 2, 5]} />
@@ -65,7 +68,7 @@ const Model3D = () => {
       </Canvas>
 
       {/* Texto "Press and drag to orbit" */}
-      <p className="absolute top-[60%] left-1/2 transform -translate-x-1/2 !text-lg sm:text-sm text-gray-400 z-10">
+      <p className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-lg sm:text-sm text-gray-400 z-10">
         Press and drag to orbit
       </p>
     </div>

@@ -10,10 +10,13 @@ import {
     CurrencyDollarIcon,
     ChartPieIcon,
 } from "@heroicons/react/24/solid";
-import Model3D from "../components/Model3D"; // Importar el componente Model3D
+import Model3D from "../components/Model3D";
 import ROICalculator from "../components/ROICalculator";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 const ProductFeatures = () => {
+    const navigate = useNavigate(); // Usar useNavigate para la navegación
+
     const features = [
         {
             icon: <ChartBarIcon className="w-10 h-10" />,
@@ -62,7 +65,7 @@ const ProductFeatures = () => {
     return (
         <div className="min-h-screen">
             {/* Sección Hero con Modelo 3D */}
-            <div className="relative w-full h-[60vh] flex items-center justify-center text-center px-4">
+            <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] flex items-center justify-center text-center px-4">
                 {/* Modelo 3D */}
                 <div className="absolute inset-0 z-0">
                     <Model3D />
@@ -70,25 +73,36 @@ const ProductFeatures = () => {
 
                 {/* Título superpuesto */}
                 <div className="relative z-10">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Product Features</h1>
-                    <p className="text-lg md:text-xl text-gray-300">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+                        Product Features
+                    </h1>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
                         Explore the powerful features designed to streamline your restaurant operations and maximize revenue.
                     </p>
                 </div>
             </div>
 
             {/* Sección de características */}
-            <section className="relative z-10 bg-[#FAFAFA] py-20 px-4 sm:px-6 lg:px-8">
-                {/* Grid de tarjetas */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                    {features.map((feature, index) => (
-                        <FeatureCard key={index} {...feature} />
-                    ))}
+            <section className="relative z-10 bg-[#FAFAFA] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    {/* Título de la sección (opcional) */}
+                    <SectionTitle title="Key Features" subtitle="What We Offer" />
+
+                    {/* Grid de tarjetas */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {features.map((feature, index) => (
+                            <FeatureCard
+                                key={index}
+                                {...feature}
+                                onClick={() => navigate(feature.buttonLink)} // Usar navigate para redirigir
+                            />
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Componente ROICalculator */}
-            <div className="bg-[#FAFAFA]">
+            <div className="bg-[#FAFAFA] py-12 sm:py-16 lg:py-20">
                 <ROICalculator />
             </div>
         </div>
