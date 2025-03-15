@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Importar useNavigate
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Importar useNavigate y useLocation
 import { FiMenu, FiX } from "react-icons/fi";
 import {
   ChartBarIcon,
@@ -95,8 +95,9 @@ function NavbarLinks({ isScrolled }) {
       >
         <button
           onClick={handleProductFeaturesClick}
-          className={`transition-colors duration-500 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"
-            }`}
+          className={`transition-colors duration-500 ${
+            isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"
+          }`}
         >
           Product Features ▾
         </button>
@@ -106,8 +107,9 @@ function NavbarLinks({ isScrolled }) {
         <Link
           key={index}
           to={link.path}
-          className={`transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"
-            }`}
+          className={`transition-colors duration-300 ${
+            isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-gray-300"
+          }`}
         >
           {link.name}
         </Link>
@@ -126,6 +128,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const location = useLocation(); // Obtener la ubicación actual
   const navigate = useNavigate(); // Usar useNavigate para la navegación
 
   useEffect(() => {
@@ -136,14 +139,19 @@ export default function Navbar() {
 
   // Función para manejar el clic en "Product Features" en el menú móvil
   const handleMobileProductFeaturesClick = () => {
-    navigate("/product-features"); // Navegar a la página usando useNavigate
-    setIsMobileMenuOpen(false); // Cerrar el menú móvil
+    if (location.pathname === "/product-features") {
+      setIsMobileDropdownOpen(!isMobileDropdownOpen); // Alternar el menú desplegable
+    } else {
+      navigate("/product-features"); // Navegar a la página usando useNavigate
+      setIsMobileDropdownOpen(true); // Abrir el menú desplegable
+    }
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled || isMobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
+        isScrolled || isMobileMenuOpen ? "bg-white shadow-md" : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto flex justify-between items-center h-20 px-6 md:px-10 xl:px-40">
         <Link to="/">
@@ -157,8 +165,9 @@ export default function Navbar() {
         <NavbarLinks isScrolled={isScrolled} />
         {/* Mobile Menu Button */}
         <button
-          className={`lg:hidden text-4xl transition-colors duration-500 ${isMobileMenuOpen || isScrolled ? "text-black" : "text-white"
-            }`}
+          className={`lg:hidden text-4xl transition-colors duration-500 ${
+            isMobileMenuOpen || isScrolled ? "text-black" : "text-white"
+          }`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}

@@ -1,4 +1,3 @@
-// src/pages/AnalyticsInsights.jsx
 import React from "react";
 import Model3D from "../components/Model3D";
 import LiveDemoFrom from "../components/LiveDemoForm";
@@ -17,19 +16,19 @@ const AnalyticsInsights = () => {
                 </div>
 
                 {/* Título superpuesto */}
-                <div className="relative z-10 text-left pl-8 sm:pl-12 lg:pl-16">
+                <div className="relative z-10 text-left pl-4 sm:pl-8 lg:pl-16">
                     <div className="flex items-center gap-2">
                         <ChartBarIcon className="w-5 h-5 text-white" /> {/* Icono de gráfico */}
                         <span className="text-white font-bold">ANALYTICS & INSIGHTS</span>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-white">
                         Empower Your Decisions with Analytics & Insights
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl text-justify">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl text-justify">
                         Easily navigate insights across platforms, transforming data into strategies that drive growth.
                     </p>
                     <motion.button
-                        className="mt-4 sm:mt-6 bg-[#78C6A3] px-6 sm:px-8 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto"
+                        className="mt-4 sm:mt-6 bg-[#78C6A3] px-4 sm:px-6 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto"
                         initial={{ scale: 0.5, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -45,8 +44,8 @@ const AnalyticsInsights = () => {
             </div>
 
             {/* Nueva sección: Centralized Analytics Overview */}
-            <section className="bg-[#FAFAFA] py-20 px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="max-w-7xl mx-auto space-y-16">
+            <section className="bg-[#FAFAFA] py-10 sm:py-20 px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="max-w-7xl mx-auto space-y-8 sm:space-y-16">
                     {/* Primer Card: Imagen a la izquierda, texto a la derecha */}
                     <Card
                         title="Centralized Analytics Overview"
@@ -78,7 +77,7 @@ const AnalyticsInsights = () => {
             </section>
 
             {/* Componente LiveDemoForm con fondo negro */}
-            <div className="bg-black py-20 relative z-10">
+            <div className="bg-black py-10 sm:py-20 relative z-10">
                 <LiveDemoFrom />
             </div>
         </div>
