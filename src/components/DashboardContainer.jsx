@@ -89,7 +89,7 @@ const DashboardContainer = () => {
                 </div>
 
                 {/* Lista de disputas */}
-                <div className="mt-40 bg-white p-4 rounded-xl shadow-2xl">
+                <div className="mt-50 bg-white p-4 rounded-xl shadow-2xl">
                     <div className="w-full text-center font-bold text-gray-500 pb-2">DISPUTE AMOUNT</div>
                     {[
                         { name: "Russell T", amount: "$12.99", logo: "https://i.imgur.com/hjGKJ7T.png" },

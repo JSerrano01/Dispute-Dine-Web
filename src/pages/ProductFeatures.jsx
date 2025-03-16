@@ -51,7 +51,7 @@ const ProductFeatures = () => {
             title: "Finance & Reconciliation",
             description: "Simplify Your Finances",
             buttonText: "Learn More",
-            buttonLink: "/finance-reconciliation",
+            buttonLink: "/finance",
         },
         {
             icon: <ChartPieIcon className="w-10 h-10" />,
