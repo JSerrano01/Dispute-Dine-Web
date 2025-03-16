@@ -68,9 +68,9 @@ const Model3D = () => {
       </Canvas>
 
       {/* Texto "Press and drag to orbit" */}
-      <p className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-lg sm:text-sm text-gray-400 z-10">
+      {/* <p className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-lg sm:text-sm text-gray-400 z-10">
         Press and drag to orbit
-      </p>
+      </p> */}
     </div>
   );
 };
