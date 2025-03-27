@@ -19,6 +19,7 @@ import ReviewsRatings from "./pages/ReviewsRatings";
 import Finance from "./pages/Finance";
 import AnalyticsInsigths from "./pages/AnalyticsInsights";
 import ScrollToTop from "./components/ScrollToTop"; // Importar el componente ScrollToTop
+import PrivacyPolicy from "./pages/PrivacyPolicy"; 
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/reviews-ratings" element={<ReviewsRatings />} />
           <Route path="/finance" element={<Finance />} />
           <Route path="/analytics-insights" element={<AnalyticsInsigths />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
 
         <Footer />
