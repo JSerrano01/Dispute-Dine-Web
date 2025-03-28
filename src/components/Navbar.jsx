@@ -127,7 +127,7 @@ function NavbarLinks({ isScrolled }) {
         )
       ))}
       <Link
-        to="/book-demo"
+        to="https://calendly.com/kory-disputedine/30min"
         className="bg-[#78C6A3] text-white px-3 py-2 rounded-md font-medium text-xs hover:bg-[#56AB92] transition-colors duration-300"
       >
         Book Demo
@@ -218,7 +218,7 @@ export default function Navbar() {
             )
           ))}
           <Link
-            to="/book-demo"
+            to="https://calendly.com/kory-disputedine/30min"
             className="bg-[#78C6A3] text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-[#56AB92] transition-colors duration-300"
             onClick={() => setIsMobileMenuOpen(false)}
           >

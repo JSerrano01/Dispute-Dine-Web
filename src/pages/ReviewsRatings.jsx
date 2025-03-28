@@ -22,10 +22,10 @@ const ReviewsRatings = () => {
                         <span className="text-white font-bold">REVIEWS & RATINGS</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-white">
-                        Master Your Reviews with Voosh
+                        Master Your Reviews with Dispute Dine
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl text-justify">
-                        Centralize, manage, and enhance your reputation effortlessly with Voosh.
+                        Centralize, manage, and enhance your reputation effortlessly with Dispute Dine.
                     </p>
                     <motion.button
                         className="mt-4 sm:mt-6 bg-[#78C6A3] px-4 sm:px-6 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto"
@@ -49,7 +49,7 @@ const ReviewsRatings = () => {
                     {/* Primer Card: Imagen a la izquierda, texto a la derecha */}
                     <Card
                         title="1. Consolidated Review Dashboard"
-                        description="Reviews can make or break your restaurant's image. With Voosh, see all your feedback from DoorDash, UberEats, GrubHub, and more in one place. Prioritize responses and engage customers like never before. Reduce manual efforts, boost satisfaction, and ensure every voice is heard."
+                        description="Reviews can make or break your restaurant's image. With Dispute Dine, see all your feedback from DoorDash, UberEats, GrubHub, and more in one place. Prioritize responses and engage customers like never before. Reduce manual efforts, boost satisfaction, and ensure every voice is heard."
                         imagePosition="left" // Imagen a la izquierda
                         backgroundColor="bg-[#99E2B4]" // Fondo verde claro
                     >
@@ -63,7 +63,7 @@ const ReviewsRatings = () => {
                     {/* Segundo Card: Texto a la izquierda, imagen a la derecha */}
                     <Card
                         title="2. Smart AI-Driven Responses"
-                        description="Instantly craft personalized replies with Voosh's AI, ensuring customers feel valued and understood. It prioritizes critical feedback, allowing businesses to address concerns swiftly. The result? Enhanced satisfaction, a stellar reputation, and more time to focus on what truly matters."
+                        description="Instantly craft personalized replies with Dispute Dine's AI, ensuring customers feel valued and understood. It prioritizes critical feedback, allowing businesses to address concerns swiftly. The result? Enhanced satisfaction, a stellar reputation, and more time to focus on what truly matters."
                         imagePosition="right" // Imagen a la derecha
                         backgroundColor="bg-[#56AB92]" // Fondo verde oscuro
                     >

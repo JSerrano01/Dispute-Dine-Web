@@ -5,9 +5,14 @@ const SuccessStoryCard = ({ id, title, description, image }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#FAFAFA] border border-gray-300 rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-      {/* Imagen */}
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="bg-[#FAFAFA] border border-gray-300 rounded-t-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+    <div className="relative h-48">
+        <img
+            src={image}
+            alt={title}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-full object-cover rounded-t-md"
+        />
+    </div>
 
       {/* Contenido de la tarjeta */}
       <div className="p-6 flex flex-col flex-grow">

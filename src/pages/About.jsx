@@ -20,7 +20,7 @@ const About = () => {
                 <div className="relative z-10">
                     <h1 className="text-4xl sm:text-6xl font-bold">Welcome to Dine</h1>
                     <p className="mt-4 max-w-2xl mx-auto text-lg">
-                        The future of restaurant technology. Voosh, a solution in the restaurant industry, was conceived with a vision to empower restaurant operators to unlock their full potential in the realm of 3rd party marketplaces.
+                        The future of restaurant technology. Dispute Dine, a solution in the restaurant industry, was conceived with a vision to empower restaurant operators to unlock their full potential in the realm of 3rd party marketplaces.
                     </p>
                 </div>
             </div>
@@ -33,9 +33,9 @@ const About = () => {
                             <div className="lg:w-[50%] text-left space-x-8">
                                 <h2 className="text-3xl font-bold">Our story</h2>
                                 <p className="max-w-3xl text-xl text-gray-600">
-                                    Starting as a virtual brand operator with 150+ restaurant partners, we faced a challenge - no unified platform for vital data from third-party marketplaces, hindering off-premise growth. This led to Voosh, <p className="text-black font-bold">democratizing tech for food operators.</p> Our robust Restaurant Marketplace Intelligence Platform enhances efficiency, customer experience, and third-party profits. <br />
+                                    Starting as a virtual brand operator with 150+ restaurant partners, we faced a challenge - no unified platform for vital data from third-party marketplaces, hindering off-premise growth. This led to Dispute Dine, <p className="text-black font-bold">democratizing tech for food operators.</p> Our robust Restaurant Marketplace Intelligence Platform enhances efficiency, customer experience, and third-party profits. <br />
                                     <br />
-                                    Backed by top Silicon Valley funds, including Y Combinator, Voosh delivers impact. 1,000+ restaurants grew third-party sales 20%, saving hours weekly. Join our mission to revolutionize dining.
+                                    Backed by top Silicon Valley funds, including Y Combinator, Dispute Dine delivers impact. 1,000+ restaurants grew third-party sales 20%, saving hours weekly. Join our mission to revolutionize dining.
                                 </p>
                                 <button className="mt-4 px-6 py-2 bg-[#56AB92] text-white !rounded-lg">
                                     Learn More
@@ -81,11 +81,11 @@ const About = () => {
                 </Layout>
             </div>
 
-            {/* Sección "Why Voosh?" */}
+            {/* Sección "Why Dispute Dine?" */}
             <div className="bg-white">
                 <Layout>
                     <div className="py-16">
-                        <h2 className="text-3xl font-bold text-center">Why Voosh?</h2>
+                        <h2 className="text-3xl font-bold text-center">Why Dispute Dine?</h2>
                         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-4">
                                 <div className="bg-white p-4 shadow rounded-lg">Cost Saving</div>
@@ -94,7 +94,7 @@ const About = () => {
                                 <div className="bg-white p-4 shadow rounded-lg">Data-Driven Decisions</div>
                             </div>
                             <div>
-                                <img src="/images/why-voosh.jpg" alt="Why Voosh?" className="rounded-lg shadow-lg" />
+                                <img src="/images/why-Dispute Dine.jpg" alt="Why Dispute Dine?" className="rounded-lg shadow-lg" />
                             </div>
                         </div>
                     </div>

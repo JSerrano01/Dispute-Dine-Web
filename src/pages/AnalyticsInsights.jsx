@@ -49,7 +49,7 @@ const AnalyticsInsights = () => {
                     {/* Primer Card: Imagen a la izquierda, texto a la derecha */}
                     <Card
                         title="Centralized Analytics Overview"
-                        description="Overwhelmed with managing third-party marketplace data? Let Voosh do the heavy lifting! Get a 360° view of your operations, from sales to reviews, without the manual hassle. Boost your bottom line and discover untapped opportunities."
+                        description="Overwhelmed with managing third-party marketplace data? Let Dispute Dine do the heavy lifting! Get a 360° view of your operations, from sales to reviews, without the manual hassle. Boost your bottom line and discover untapped opportunities."
                         imagePosition="left" // Imagen a la izquierda
                         backgroundColor="bg-[#99E2B4]" // Fondo verde claro
                     >

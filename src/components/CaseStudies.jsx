@@ -11,9 +11,14 @@ const SuccessStoryCard = ({ id, title, description, image, link }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="bg-[#FAFAFA] border border-gray-300 rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-            {/* Imagen */}
-            <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="bg-[#FAFAFA] border border-gray-300 rounded-t-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+            <div className="relative h-48">
+                <img
+                    src={image}
+                    alt={title}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-full object-cover rounded-t-md"
+                />
+            </div>
 
             {/* Contenido de la tarjeta */}
             <div className="p-6 flex flex-col flex-grow">
@@ -62,7 +67,7 @@ const CaseStudies = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-3xl font-bold text-black">Voosh Verified: Success Stories</h2>
+                    <h2 className="text-3xl font-bold text-black">Dispute Dine: Success Stories</h2>
                     <button
                         onClick={() => navigate("/success-stories")} // Redirige a la página de Success Stories
                         className="!text-[#56AB92] !font-medium hover:underline px-20 scale-130"

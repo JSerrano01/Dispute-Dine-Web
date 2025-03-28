@@ -49,8 +49,8 @@ const DisputeManager = () => {
                 <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
                     {/* Primer Card: Imagen a la izquierda, texto a la derecha */}
                     <Card
-                        title="1. Take Control with Voosh's Dispute Manager"
-                        description="Disputes can drain time and profits. With Voosh's Dispute Manager, centralize all your issues, automate responses, and recover lost revenue faster. Say goodbye to manual tracking and endless back-and-forths. Let us handle the disputes while you focus on delighting your customers."
+                        title="1. Take Control with Dispute Dine's Dispute Manager"
+                        description="Disputes can drain time and profits. With Dispute Dine's Dispute Manager, centralize all your issues, automate responses, and recover lost revenue faster. Say goodbye to manual tracking and endless back-and-forths. Let us handle the disputes while you focus on delighting your customers."
                         imagePosition="left" // Imagen a la izquierda
                         backgroundColor="bg-[#99E2B4]" // Fondo azul claro
                     >
@@ -64,7 +64,7 @@ const DisputeManager = () => {
                     {/* Segundo Card: Texto a la izquierda, imagen a la derecha */}
                     <Card
                         title="2. Maximize Resolutions, Minimize Hassles"
-                        description="Unresolved disputes can tarnish your restaurant's reputation and hurt revenues. Voosh's Dispute Manager proactively identifies and addresses issues, ensuring maximum resolutions with minimum effort. Streamline the dispute process, protect your earnings, and focus on what you do best - serving delicious meals."
+                        description="Unresolved disputes can tarnish your restaurant's reputation and hurt revenues. Dispute Dine's Dispute Manager proactively identifies and addresses issues, ensuring maximum resolutions with minimum effort. Streamline the dispute process, protect your earnings, and focus on what you do best - serving delicious meals."
                         imagePosition="right" // Imagen a la derecha
                         backgroundColor="bg-[#56AB92]" // Fondo verde claro
                     >

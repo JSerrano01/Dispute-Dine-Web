@@ -49,7 +49,7 @@ const PromotionManager = () => {
                     {/* Primer Card: Imagen a la izquierda, texto a la derecha */}
                     <Card
                         title="1. Comprehensive Campaign Configuration"
-                        description="Gain the ability to configure every aspect of your campaigns. Set up targeted offers across different platforms and adjust your ads and promotions based on real-time data. Voosh offers unparalleled control at your fingertips, ensuring that your promotional activities are not just tracked but strategically crafted to meet your business objectives."
+                        description="Gain the ability to configure every aspect of your campaigns. Set up targeted offers across different platforms and adjust your ads and promotions based on real-time data. Dispute Dine offers unparalleled control at your fingertips, ensuring that your promotional activities are not just tracked but strategically crafted to meet your business objectives."
                         imagePosition="left" // Imagen a la izquierda
                         backgroundColor="bg-[#99E2B4]" // Fondo verde claro
                     >
@@ -63,7 +63,7 @@ const PromotionManager = () => {
                     {/* Segundo Card: Texto a la izquierda, imagen a la derecha */}
                     <Card
                         title="2. Data-Driven Insights for Smarter Decisions"
-                        description="Elevate your promotional strategy with actionable insights derived from comprehensive data analysis. Voosh’s Promotions Manager goes beyond traditional tracking, offering a detailed view into campaign performance, customer engagement, ROI, and more. Adjust your strategies on the fly, ensuring that every campaign is optimized for success."
+                        description="Elevate your promotional strategy with actionable insights derived from comprehensive data analysis. Dispute Dine’s Promotions Manager goes beyond traditional tracking, offering a detailed view into campaign performance, customer engagement, ROI, and more. Adjust your strategies on the fly, ensuring that every campaign is optimized for success."
                         imagePosition="right" // Imagen a la derecha
                         backgroundColor="bg-[#56AB92]" // Fondo verde oscuro
                     >

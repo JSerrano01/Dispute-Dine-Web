@@ -1,6 +1,5 @@
 import StatsCard from "./StatsCard";
 import FinanceChart from "./FinanceChart";
-import disputeImage from "../assets/img/landingpage/image1.png"; // Importar la imagen si está en src/assets
 import { ArrowUpRight } from "lucide-react"
 import { ChatBubbleLeftEllipsisIcon, StarIcon, BanknotesIcon } from "@heroicons/react/24/solid";
 import CountUp from "react-countup";
@@ -12,9 +11,9 @@ const Dashboard = () => {
         { text: "DoorDash", color: "text-red-500" },
         { text: "Uber Eats", color: "text-green-500" },
         { text: "GrubHub", color: "text-yellow-500" },
-        { text: "Google", color: "text-blue-500" },
-        { text: "ezCater", color: "text-green-400" },
-        { text: "Yelp", color: "text-red-600" },
+        // { text: "Google", color: "text-blue-500" },
+        // { text: "ezCater", color: "text-green-400" },
+        // { text: "Yelp", color: "text-red-600" },
     ];
 
     // Agrupar elementos de dos en dos
@@ -70,7 +69,7 @@ const Dashboard = () => {
 
                 <div className="flex flex-col gap-6">
                     {/* Card con Texto */}
-                    <StatsCard
+                    {/* <StatsCard
                         title={
                             <div className="flex items-center gap-2">
                                 <StarIcon className="w-5 h-5 text-white" />
@@ -91,11 +90,11 @@ const Dashboard = () => {
                                 </span>
                             </div>
                         </div>
-                    </StatsCard>
+                    </StatsCard> */}
 
                     {/* Card con Etiquetas de Texto */}
                     <StatsCard title={
-                        <div className="flex items-center gap-2"><StarIcon className="w-5 h-5 text-gray-500" /><span className="text-gray-500 font-semibold">MARKETPLACE MANAGEMENT</span></div>}>
+                        <div className="flex items-center gap-2"><StarIcon className="w-5 h-5 text-white" /><span className="text-white font-semibold">MARKETPLACE MANAGEMENT</span></div>}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}

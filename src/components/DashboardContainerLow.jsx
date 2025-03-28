@@ -41,7 +41,7 @@ const DashboardContainerLower = () => {
           Enhance your brand's reputation and customer experience across your third-party marketplaces from one unified dashboard.
         </p>
         <div className="flex gap-2 mt-4 font-medium flex-wrap">
-          {["DOORDASH", "UBER EATS", "GRUBHUB", "GOOGLE", "YELP"].map((item, index) => (
+          {["DOORDASH", "UBER EATS", "GRUBHUB", /*"GOOGLE", "YELP"*/].map((item, index) => (
             <motion.span
               key={item}
               className="bg-[#99E2B4] px-3 py-2 text-xs rounded-md !text-[#FAFAFA]"
