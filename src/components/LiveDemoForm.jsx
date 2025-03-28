@@ -72,7 +72,8 @@ const DemoForm = () => {
 
                     {/* Botón */}
                     <button
-                        type="submit"
+                        type="button"
+                        onClick={() => window.open("https://calendly.com/kory-disputedine/30min", "_blank")}
                         className="w-full lg:w-auto p-3 bg-[#56AB92] !rounded-2xl text-[#FAFAFA] text-sm font-semibold hover:bg-[#FAFAFA] hover:text-[#56AB92] transition-colors duration-500"
                     >
                         Book demo
