@@ -61,7 +61,7 @@ const DashboardContainerLower = () => {
         <div className="mt-6">
           <RatingGauge value={4.2} /> {/* 📌 Aquí agregamos el velocímetro */}
         </div>
-        <div className="mt-6 sm:mt-18 bottom-0">
+        {/* <div className="mt-6 sm:mt-18 bottom-0">
           <motion.button
             className="border border-white px-4 py-2 !rounded-2xl !text-[#FAFAFA] flex items-center gap-2 hover:bg-white hover:!text-[#56AB92] transition-colors duration-500"
             initial={{ scale: 0.5, opacity: 0 }}
@@ -76,7 +76,7 @@ const DashboardContainerLower = () => {
           >
             View Details ➝
           </motion.button>
-        </div>
+        </div> */}
       </div>
 
       {/* Finance Card */}
@@ -114,7 +114,7 @@ const DashboardContainerLower = () => {
               stiffness: 200,
               damping: 10,
             }}
-            onClick={() => handleViewDetails("FINANCE AND RECONCILIATION")} // Navegar a la ruta
+            onClick={() => handleViewDetails("FINANCE")} // Navegar a la ruta
           >
             View Details ➝
           </motion.button>

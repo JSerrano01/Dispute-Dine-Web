@@ -27,8 +27,11 @@ const DowntimeController = () => {
                     <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl text-justify">
                         Instantly see why your actual payout differs from your estimated payout, reconcile POS data with off-premise orders, and dive into detailed transaction insights to ensure accuracy and boost profitability.
                     </p>
-                    <motion.button
-                        className="mt-4 sm:mt-6 bg-[#78C6A3] px-6 sm:px-8 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto"
+                    <motion.a
+                        href="https://calendly.com/kory-disputedine/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 sm:mt-6 bg-[#78C6A3] hover:bg-[#56AB92] px-6 sm:px-8 py-2 sm:py-3 !rounded-2xl text-white font-semibold w-full sm:w-auto inline-block text-center transition-colors duration-300"
                         initial={{ scale: 0.5, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: false, amount: 0.2 }}
@@ -39,7 +42,7 @@ const DowntimeController = () => {
                         }}
                     >
                         Book a Demo →
-                    </motion.button>
+                    </motion.a>
                 </div>
             </div>
 

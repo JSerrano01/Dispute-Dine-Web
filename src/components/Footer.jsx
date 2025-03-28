@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     const productFeaturesLinks = {
         "Dispute Manager": "/dispute-manager",
-        "Promotions Manager": "/promotion-manager",
-        "Downtime Controller": "/downtime-controller",
-        "Reviews and Ratings": "/reviews-ratings",
+        // "Promotions Manager": "/promotion-manager",
+        // "Downtime Controller": "/downtime-controller",
+        // "Reviews and Ratings": "/reviews-ratings",
         "Finance and Reconciliation": "/finance",
         "Analytics and Insights": "/analytics-insights",
     };

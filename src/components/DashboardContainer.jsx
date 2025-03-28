@@ -170,7 +170,7 @@ const DashboardContainer = () => {
                     <PromotionsGraph />
                 </div>
                 {/* Botón de detalles */}
-                <div className="mt-65 bottom-0">
+                {/* <div className="mt-65 bottom-0">
                     <motion.button
                         className="border border-white px-4 py-2 !rounded-2xl text-[#FAFAFA] flex items-center gap-2 hover:bg-white hover:text-[#56AB92] transition-colors duration-500"
                         initial={{ scale: 0.5, opacity: 0 }}
@@ -185,7 +185,7 @@ const DashboardContainer = () => {
                     >
                         View Details ➝
                     </motion.button>
-                </div>
+                </div> */}
             </Card>
         </div>
     );
