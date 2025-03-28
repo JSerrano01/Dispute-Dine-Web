@@ -1,6 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import { FaYoutube, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { Link } from "react-router-dom"; // Importar Link
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const productFeaturesLinks = {
@@ -92,6 +92,13 @@ const Footer = () => {
                         ))}
                     </div>
                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
+                </div>
+                
+                {/* Nuevo: Créditos de desarrollo */}
+                <div className="w-full text-center mt-16">
+                    <p className="text-xs text-gray-500">
+                        Developed by Vindici Co. & Jaime Serrano
+                    </p>
                 </div>
             </div>
         </footer>
