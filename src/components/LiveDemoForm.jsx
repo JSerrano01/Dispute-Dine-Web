@@ -7,7 +7,7 @@ const DemoForm = () => {
             {/* Video Section */}
             <div className="relative w-full lg:w-1/2 px-6 lg:px-0">
                 <img
-                    src="src\assets\img\logoNavbarLight.png"
+                    src="\img\logoNavbarLight.png"
                     alt="Video Thumbnail"
                     className="w-full h-auto rounded-lg"
                 />

@@ -25,43 +25,43 @@ const companies = [
 const localPartners = [
     {
         name: "Dispute Dine",
-        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dollar Cafe",
-        logo: "src/assets/img/partners/partner1.png"
+        logo: "/img/partners/partner1.png"
     },
     {
         name: "Dispute Dine",
-        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dollar Cafe",
-        logo: "src/assets/img/partners/partner1.png"
+        logo: "/img/partners/partner1.png"
     },
     {
         name: "Dispute Dine",
-        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dollar Cafe",
-        logo: "src/assets/img/partners/partner1.png"
+        logo: "/img/partners/partner1.png"
     },
     {
         name: "Dispute Dine",
-        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dollar Cafe",
-        logo: "src/assets/img/partners/partner1.png"
+        logo: "/img/partners/partner1.png"
     },
     {
         name: "Dispute Dine",
-        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dollar Cafe",
-        logo: "src/assets/img/partners/partner1.png"
+        logo: "/img/partners/partner1.png"
     },
     // Agrega más partners según necesites
 ];
