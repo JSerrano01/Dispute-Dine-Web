@@ -92,9 +92,9 @@ const DashboardContainer = () => {
                 <div className="mt-50 bg-white p-4 rounded-xl shadow-2xl">
                     <div className="w-full text-center font-bold text-gray-500 pb-2">DISPUTE AMOUNT</div>
                     {[
-                        { name: "Russell T", amount: "$12.99", logo: "https://i.imgur.com/hjGKJ7T.png" },
-                        { name: "Hannah", amount: "$16.10", logo: "https://i.imgur.com/sjT2Fpz.png" },
-                        { name: "Joey", amount: "$22.09", logo: "https://i.imgur.com/hXq7z6U.png" }
+                        { name: "Russell T", amount: "$12.99", logo: "https://i.pravatar.cc/150?img=4" },
+                        { name: "Hannah", amount: "$16.10", logo: "https://i.pravatar.cc/150?img=10" },
+                        { name: "Joey", amount: "$22.09", logo: "https://i.pravatar.cc/150?img=3" }
                     ].map((user, index, arr) => (
                         <div
                             key={user.name}

@@ -29,9 +29,9 @@ function CameraController() {
 
 // Modelo 3D sin la letra ni textos
 function ModelOnly() {
-  const { scene } = useGLTF("/models/B_letter.glb"); // Carga desde public/
+  const { scene } = useGLTF("/models/DD_logo.glb"); // Carga desde public/
 
-  return <primitive object={scene} scale={1.0} position={[0, 0, 0]} />; // Escala reducida
+  return <primitive object={scene} scale={0.4} position={[-1.5, 0, 0]} />; // Escala reducida
 }
 
 const Model3D = () => {

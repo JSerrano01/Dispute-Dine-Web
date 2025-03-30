@@ -1,6 +1,7 @@
 import React from "react";
 
-// Lista de dominios de marcas conocidas
+// Lista original comentada (se mantiene por referencia)
+/*
 const companies = [
     "google.com",
     "facebook.com",
@@ -18,9 +19,52 @@ const companies = [
     "github.com",
     "airbnb.com",
 ];
+*/
 
-// Genera URLs de logos usando Clearbit
-const logos = companies.map((company) => `https://logo.clearbit.com/${company}`);
+// Nueva lista con imágenes locales de partners
+const localPartners = [
+    {
+        name: "Dispute Dine",
+        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "src/assets/img/partners/partner1.png"
+    },
+    {
+        name: "Dispute Dine",
+        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "src/assets/img/partners/partner1.png"
+    },
+    {
+        name: "Dispute Dine",
+        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "src/assets/img/partners/partner1.png"
+    },
+    {
+        name: "Dispute Dine",
+        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "src/assets/img/partners/partner1.png"
+    },
+    {
+        name: "Dispute Dine",
+        logo: "src/assets/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "src/assets/img/partners/partner1.png"
+    },
+    // Agrega más partners según necesites
+];
 
 const LogoSlider = () => {
     return (
@@ -32,12 +76,13 @@ const LogoSlider = () => {
                 {/* Contenedor que se mueve infinitamente */}
                 <div className="flex min-w-max animate-marquee hover:animate-paused">
                     {/* Duplicamos el array para un efecto continuo */}
-                    {[...logos, ...logos].map((logo, index) => (
-                        <div key={index} className="flex justify-center px-4">
+                    {[...localPartners, ...localPartners].map((partner, index) => (
+                        <div key={`${partner.name}-${index}`} className="flex justify-center px-4">
                             <img
-                                src={logo}
-                                alt={`Logo ${index}`}
-                                className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover"
+                                src={partner.logo}
+                                alt={partner.name}
+                                className="w-16 h-16 md:w-24 md:h-24 object-contain transition-all duration-300"
+                                loading="lazy"
                             />
                         </div>
                     ))}

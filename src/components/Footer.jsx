@@ -21,7 +21,7 @@ const Footer = () => {
     const socialMediaLinks = [
         { Icon: FaYoutube, url: "https://www.youtube.com" },
         { Icon: FaLinkedin, url: "https://www.linkedin.com" },
-        { Icon: FaInstagram, url: "https://www.instagram.com" },
+        { Icon: FaInstagram, url: "https://www.instagram.com/disputedine/" },
         { Icon: FaXTwitter, url: "https://twitter.com" },
     ];
 
@@ -33,12 +33,15 @@ const Footer = () => {
                     <img src="/img/logoNavbarLight.png" alt="Dispute Dine Logo" className="h-35 mb-4" />
                     <p className="text-sm">We're Here to Help You Maximize Your Potential</p>
                     <div className="mt-4 flex flex-col gap-2 text-sm">
-                        <span className="flex items-center gap-2">
+                        <span
+                            className="flex items-center gap-2 cursor-pointer hover:text-[#78C6A3] transition-colors"
+                            onClick={() => window.location.href = "mailto:contacto@tudominio.com?subject=Consulta"}
+                        >
                             <Mail size={16} /> Mail Us
                         </span>
-                        <span className="flex items-center gap-2">
+                        {/* <span className="flex items-center gap-2">
                             <Phone size={16} /> Contact Us
-                        </span>
+                        </span> */}
                     </div>
                 </div>
 
@@ -46,9 +49,9 @@ const Footer = () => {
                 <div className="mt-12 ml-35 max-sm:ml-7 max-md:ml-7 lg:ml-35 xl:ml-35">
                     <p className="font-normal mb-2 text-gray-500">Address</p>
                     <p className="text-sm">
-                        2261, Market Street <br />
-                        #4509, San Francisco, CA <br />
-                        94114
+                        5799 New Peachtree Rd <br />
+                        Doraville, GA <br />
+                        30340
                     </p>
                 </div>
 
@@ -93,7 +96,7 @@ const Footer = () => {
                     </div>
                     <p className="text-xs text-gray-400">© 2025 Dispute Dine, All Rights Reserved</p>
                 </div>
-                
+
                 {/* Nuevo: Créditos de desarrollo */}
                 <div className="w-full text-center mt-16">
                     <p className="text-xs text-gray-500">
