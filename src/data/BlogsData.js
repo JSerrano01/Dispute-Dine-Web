@@ -1,5 +1,5 @@
 // src/data/BlogData.js
-import DisputeDineLogo from '../assets/img/LogoNavbarDark.png';
+import DisputeDineLogo from './LogoNavbarDark.png';
 const BlogData = [
   {
     id: 1,
