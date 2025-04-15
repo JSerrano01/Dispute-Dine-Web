@@ -5,7 +5,7 @@ const SuccessStoriesData = [
   {
     id: 1,
     title: "How Dispute Dine Helped Dollar Cafe Recover Over $8,000 in Just 3 Months",
-    description: "Priyam Saraswat, CEO of Dispute Dine Data security is at the core of everything we do",
+    description: "Dollar Cafe recovered over $8,000 in 90 days using Dispute Dine to fight third-party delivery disputes. Real money, back where it belongs.",
     image: case1Image,
     link: "/success-stories/1",
     date: "2024-11-2",
