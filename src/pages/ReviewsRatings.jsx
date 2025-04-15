@@ -54,7 +54,7 @@ const ReviewsRatings = () => {
                         backgroundColor="bg-[#99E2B4]" // Fondo verde claro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Real-Time Monitoring & Control"
                             className="w-full h-auto rounded-lg"
                         />
@@ -68,7 +68,7 @@ const ReviewsRatings = () => {
                         backgroundColor="bg-[#56AB92]" // Fondo verde oscuro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Advanced Analytics & Impact Assessment"
                             className="w-full h-auto rounded-lg"
                         />

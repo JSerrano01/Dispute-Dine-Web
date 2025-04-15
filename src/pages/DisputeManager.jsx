@@ -58,7 +58,7 @@ const DisputeManager = () => {
                         backgroundColor="bg-[#99E2B4]" // Fondo azul claro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Take Control"
                             className="w-full h-auto rounded-lg"
                         />
@@ -72,7 +72,7 @@ const DisputeManager = () => {
                         backgroundColor="bg-[#56AB92]" // Fondo verde claro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Maximize Resolutions"
                             className="w-full h-auto rounded-lg"
                         />

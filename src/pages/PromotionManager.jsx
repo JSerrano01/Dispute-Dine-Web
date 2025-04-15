@@ -54,7 +54,7 @@ const PromotionManager = () => {
                         backgroundColor="bg-[#99E2B4]" // Fondo verde claro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Comprehensive Campaign Configuration"
                             className="w-full h-auto rounded-lg"
                         />
@@ -68,7 +68,7 @@ const PromotionManager = () => {
                         backgroundColor="bg-[#56AB92]" // Fondo verde oscuro
                     >
                         <img
-                            src="https://picsum.photos/1280/720" // Reemplaza con tu imagen
+                            src="\img\LogoWhiteBackground.png" // Reemplaza con tu imagen
                             alt="Data-Driven Insights"
                             className="w-full h-auto rounded-lg"
                         />
