@@ -17,7 +17,7 @@ import ReviewsRatings from "./pages/ReviewsRatings";
 import Finance from "./pages/Finance";
 import AnalyticsInsigths from "./pages/AnalyticsInsights";
 import ScrollToTop from "./components/ScrollToTop";
-import PrivacyPolicy from "./pages/PrivacyPolicy"; 
+import PrivacyPolicy from "./pages/PP"; 
 import NotFound from "./pages/NotFound"; // Importa un componente NotFound
 
 const App = () => {
