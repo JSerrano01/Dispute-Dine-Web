@@ -40,20 +40,8 @@ const localPartners = [
         logo: "/img/partners/partner2.png" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
-        name: "Dispute Dine",
-        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
-    },
-    {
-        name: "Dollar Cafe",
-        logo: "/img/partners/partner1.png"
-    },
-    {
-        name: "Mi Oaxaqueña",
-        logo: "/img/partners/partner3.png"
-    },
-    {
-        name: "Scoville Hot Chicken",
-        logo: "/img/partners/partner2.png" // Asegúrate de tener esta imagen en public/images/partners/
+        name: "Hokkaido",
+        logo: "/img/partners/partner4.jpg" // Asegúrate de tener esta imagen en public/images/partners/
     },
     {
         name: "Dispute Dine",
@@ -70,6 +58,30 @@ const localPartners = [
     {
         name: "Scoville Hot Chicken",
         logo: "/img/partners/partner2.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Hokkaido",
+        logo: "/img/partners/partner4.jpg" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dispute Dine",
+        logo: "/img/partners/DD_logo.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Dollar Cafe",
+        logo: "/img/partners/partner1.png"
+    },
+    {
+        name: "Mi Oaxaqueña",
+        logo: "/img/partners/partner3.png"
+    },
+    {
+        name: "Scoville Hot Chicken",
+        logo: "/img/partners/partner2.png" // Asegúrate de tener esta imagen en public/images/partners/
+    },
+    {
+        name: "Hokkaido",
+        logo: "/img/partners/partner4.jpg" // Asegúrate de tener esta imagen en public/images/partners/
     },
     // Agrega más partners según necesites
 ];

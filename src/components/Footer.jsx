@@ -19,10 +19,9 @@ const Footer = () => {
     };
 
     const socialMediaLinks = [
-        { Icon: FaYoutube, url: "https://www.youtube.com" },
-        { Icon: FaLinkedin, url: "https://www.linkedin.com" },
+        { Icon: FaLinkedin, url: "https://www.linkedin.com/company/dispute-dine" },
         { Icon: FaInstagram, url: "https://www.instagram.com/disputedine/" },
-        { Icon: FaXTwitter, url: "https://twitter.com" },
+        { Icon: FaXTwitter, url: "https://x.com/DisputeDine" },
     ];
 
     return (
